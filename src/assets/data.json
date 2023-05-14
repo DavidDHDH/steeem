@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "image": "https://actua.blog/wp-content/uploads/2021/12/Test-de-Farming-Simulator-22.jpg",
+        "title": "Farming Simulator 2022",
+        "description":"Entrez dans la peau d'un agriculteur moderne ! La culture, l'élevage et la sylviculture offrent un large éventail d'activités agricoles quand vous affrontez le défi des quatre saisons, en particulier quand l'hiver s'installe.",
+        "note": 16,
+        "price": 29.99,
+        "gotIt": false,
+        "personalRank":null
+    },
+    {
+        "id": 2,
+        "image": "https://image.api.playstation.com/vulcan/img/rnd/202010/0918/8OwOHnpkwNQ5IgQkYSxI9xG4.jpg",
+        "title": "Prison Architect",
+        "description":"Seuls les gardiens de prison les plus impitoyables seront capables de confiner les plus cruels des détenus. Dans Prison Architect, vous devrez concevoir et développer votre établissement pénitencier personnalisé.",
+        "note": 18,
+        "price": 24.99,
+        "gotIt": true,
+        "personalRank":4
+    },
+    {
+        "id": 3,
+        "image": "https://www-origin.planetzoogame.com/images/og_image.jpg",
+        "title": "Planet Zoo",
+        "description":"Avec Planet Zoo, construisez un monde idéal pour nos amies les bêtes ! Les développeurs de Planet Coaster et de Zoo Tycoon vous proposent la simulation de zoo ultime. Bâtissez des habitats, gérez votre zoo et prenez soin des animaux qui exploreront l'univers que vous leur aurez créé.",
+        "note": 16,
+        "price": 44.99,
+        "gotIt": true,
+        "personalRank":5
+    },
+    {
+        "id": 4,
+        "image": "https://ingyen-hatterkep.hu/hatterkepek_tablet/call-of-duty-black-ops-ii-hatterkep-60998.jpg",
+        "title": "Call Of Duty",
+        "description":"Call of Duty®: Modern Warfare® II plonge les joueurs dans un conflit mondial sans précédent, avec le retour des Opérateurs emblématiques de la Task Force 141.",
+        "note": 17,
+        "price": 69.99,
+        "gotIt": false,
+        "personalRank":1
+    },
+    {
+        "id": 5,
+        "image":"https://cdn1.epicgames.com/e1055bf1e5654b93a27e19e6bb86cb2a/offer/EGS_Tropico6_LimbicEntertainment_S3-2560x1440-82bcd83b988a5c3230ff8f191113d9b2.jpg",
+        "title": "Tropico 6",
+        "description":"El Presidente est de retour! Endossez une nouvelle fois le rôle de dictateur sans pitié ou d’homme d’État pacifique sur l’île de Tropico, et forgez la destinée de votre nation à travers 4 ères distinctes.",
+        "note": 19,
+        "price": 39.99,
+        "gotIt": false,
+        "personalRank":1
+    },
+    {
+        "id": 6,
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1364210/capsule_616x353.jpg?t=1683706522",
+        "title": "City Bus Manager",
+        "description":"Dans City Bus Manager, vous pouvez construire votre dépôt de bus de toutes pièces et créer vos propres itinéraires de bus. Jouez avec les données de cartes réelles de votre ville natale ou de n'importe quelle ville du monde, illustre ou inconnue.",
+        "note": 8,
+        "price": 27.99,
+        "gotIt": false,
+        "personalRank":1
+    },
+    {
+        "id": 7,
+        "image": "https://cdn1.epicgames.com/cd14dcaa4f3443f19f7169a980559c62/offer/EGS_SidMeiersCivilizationVI_FiraxisGames_S1-2560x1440-2fcd1c150ac6d8cdc672ae042d2dd179.jpg",
+        "title": "Civilisation VI",
+        "description":"Civilization VI est le dernier épisode de la franchise éponyme, récompensée de nombreuses fois. Repoussez les frontières de votre empire, développez votre patrimoine culturel et affrontez les plus grands seigneurs de l'histoire. Votre civilisation tiendra-t-elle face aux ravages du temps ?",
+        "note": 15,
+        "price": 59.99,
+        "gotIt": false,
+        "personalRank":1
+    },
+    {
+        "id": 8,
+        "image": "https://cdn1.epicgames.com/7051eadbb8c2435caf32a9bc0dc17936/offer/EGS_Royalty_LudeonStudios_DLC_S1-2560x1440-c2d988da3d4ae505be7bc9739515a3ed.jpg",
+        "title": "RimWorld",
+        "description":"RimWorld suit trois survivants d’un écrasement de vaisseau spatial pendant qu’ils bâtissent leur colonie sur une planète à la frontière de l’espace exploré. Inspiré du genre space western de Firefly, la simulation profonde de Dwarf Fortress, et l’échelle grandiose de Dune et Warhammer 40,000.",
+        "note": 14,
+        "price": 31.99,
+        "gotIt": false,
+        "personalRank":1
+    },
+    {
+        "id": 9,
+        "image": "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_LeisureSuitLarryWetDreamsDontDry_image1600w.jpg",
+        "title": "Leasure Suit Larry",
+        "description":"Rien ne pourra m'empêcher de rejoindre ma bien-aimée, ma Faith, pas même les îles sauvages et farouches de Kalau'a. Ces jolies filles des îles ne détourneront mon regard que temporairement, car mon cœur n'appartient qu'à Faith !",
+        "note": 15,
+        "price": 34.99,
+        "gotIt": true,
+        "personalRank":4
+    },
+    {
+        "id": 10,
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/388210/capsule_616x353.jpg?t=1677883363",
+        "title": "Day of the tentacle",
+        "description":"20 ans plus tard, Day of the Tentacle est de retour en version remastérisée incluant des dessins haute définition inédits et faits à la main, ainsi que musiques, effets sonores et audio remastérisés.",
+        "note": 12,
+        "price": 14.99,
+        "gotIt": false,
+        "personalRank":1
+    }
+]
