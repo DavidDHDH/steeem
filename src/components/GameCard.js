@@ -1,6 +1,17 @@
 import CardFooter from './CardFooter'
 
-function GameCard({ title, description, image, note, price, gotIt }) {
+function GameCard({
+  id,
+  title,
+  description,
+  image,
+  note,
+  price,
+  gotIt,
+  cart,
+  setCart,
+  favicon,
+}) {
   return (
     <>
       <div className="bg-white flex flex-col space-y-4 rounded-lg shadow-md h-auto">
@@ -17,7 +28,17 @@ function GameCard({ title, description, image, note, price, gotIt }) {
           </h2>
           <div className="">
             <p className="text-center mb-10 h-60">{description}</p>
-            <CardFooter className="" note={note} price={price} gotIt={gotIt} />
+            <CardFooter
+              className=""
+              id={id}
+              title={title}
+              note={note}
+              price={price}
+              gotIt={gotIt}
+              cart={cart}
+              setCart={setCart}
+              favicon={favicon}
+            />
           </div>
         </div>
       </div>

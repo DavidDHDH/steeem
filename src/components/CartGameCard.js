@@ -1,20 +1,30 @@
-import tropico from '../assets/images/EGS_Tropico6_LimbicEntertainment_S3-2560x1440-82bcd83b988a5c3230ff8f191113d9b2.jpg'
+function CartGameCard({ title, price, favicon, setCart, cart, id }) {
+  function removeItem(id) {
+    console.log(id)
+    console.log(cart)
+    const newList = cart.filter((item) => item.id !== id)
+    console.log(newList)
 
-function CartGameCard({ title, price }) {
+    setCart(newList)
+  }
+
   return (
     <>
-      <div className="flex justify-between bg-white rounded-lg border shadow-md">
+      <div className="flex justify-between bg-white rounded-sm border shadow-md">
         <div className="flex items-center m-1">
           <img
-            src={tropico}
+            src={favicon}
             className="h-12 w-12 object-center object-cover n m-1"
             alt="Couverture jeu video"
           ></img>
-          <h1 className="ml-2 w-30 truncate font-semibold">{title}</h1>
+          <h1 className="ml-2 w-28 font-semibold text-sm">{title}</h1>
         </div>
         <div className="flex flex-col justify-evenly items-end mr-2">
-          <p className="font-bold">29,99€</p>
-          <button className="bg-white border border-gray-400 rounded-md flex justify-center items-center h-6 w-6">
+          <p className="font-bold">{price}€</p>
+          <button
+            onClick={() => removeItem({ id })}
+            className="bg-white rounded-md flex justify-center items-center h-6 w-6"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

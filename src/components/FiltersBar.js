@@ -1,12 +1,11 @@
 import FilterBtn from './FilterBtn'
 
-function FiltersBar() {
+function FiltersBar({ filter, setFilter }) {
   return (
-    <div className="flex w-80 justify-between items-center">
-      {/* <FilterBtn name="Tous" /> */}
+    <div className="flex w-full justify-between items-center">
       Filtrer par :
-      <FilterBtn name="J'ai" />
-      <FilterBtn name="J'ai pas" />
+      <FilterBtn name="J'ai" filter={filter} setFilter={setFilter} />
+      <FilterBtn name="J'ai pas" filter={filter} setFilter={setFilter} />
     </div>
   )
 }

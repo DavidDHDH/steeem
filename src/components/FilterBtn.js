@@ -1,18 +1,25 @@
 import React, { useState } from 'react'
 import '../styles/index.css'
 
-function FilterBtn({ name }) {
-  let [state, setActive] = useState('buttoninactive')
-  function onClick(e) {
+function FilterBtn({ name, filter, setFilter }) {
+  const [state, setActive] = useState('buttoninactive')
+
+  function handleClick(e) {
     e.preventDefault()
-    state === 'buttoninactive'
-      ? setActive('buttonactive')
-      : setActive('buttoninactive')
+    const value = e.target.value
+    const active = () => {
+      setActive('buttonactive')
+    }
+    const desactive = () => {
+      setActive('buttoninactive')
+    }
+
+    state === 'buttoninactive' ? active() : desactive()
   }
 
   return (
     <div>
-      <button onClick={onClick} className={state}>
+      <button onClick={handleClick} className={state} value={name}>
         {name}
       </button>
     </div>
