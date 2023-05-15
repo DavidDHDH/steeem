@@ -6,6 +6,7 @@
         "description":"Entrez dans la peau d'un agriculteur moderne ! La culture, l'élevage et la sylviculture offrent un large éventail d'activités agricoles quand vous affrontez le défi des quatre saisons, en particulier quand l'hiver s'installe.",
         "note": 16,
         "price": 29.99,
+        "onCart": false,
         "gotIt": false,
         "personalRank":null
     },
@@ -16,6 +17,7 @@
         "description":"Seuls les gardiens de prison les plus impitoyables seront capables de confiner les plus cruels des détenus. Dans Prison Architect, vous devrez concevoir et développer votre établissement pénitencier personnalisé.",
         "note": 18,
         "price": 24.99,
+        "onCart": false,
         "gotIt": true,
         "personalRank":4
     },
@@ -26,6 +28,7 @@
         "description":"Avec Planet Zoo, construisez un monde idéal pour nos amies les bêtes ! Les développeurs de Planet Coaster et de Zoo Tycoon vous proposent la simulation de zoo ultime. Bâtissez des habitats, gérez votre zoo et prenez soin des animaux qui exploreront l'univers que vous leur aurez créé.",
         "note": 16,
         "price": 44.99,
+        "onCart": false,
         "gotIt": true,
         "personalRank":5
     },
@@ -46,6 +49,7 @@
         "description":"El Presidente est de retour! Endossez une nouvelle fois le rôle de dictateur sans pitié ou d’homme d’État pacifique sur l’île de Tropico, et forgez la destinée de votre nation à travers 4 ères distinctes.",
         "note": 19,
         "price": 39.99,
+        "onCart": false,
         "gotIt": false,
         "personalRank":1
     },
@@ -56,6 +60,7 @@
         "description":"Dans City Bus Manager, vous pouvez construire votre dépôt de bus de toutes pièces et créer vos propres itinéraires de bus. Jouez avec les données de cartes réelles de votre ville natale ou de n'importe quelle ville du monde, illustre ou inconnue.",
         "note": 8,
         "price": 27.99,
+        "onCart": false,
         "gotIt": false,
         "personalRank":1
     },
@@ -66,6 +71,7 @@
         "description":"Civilization VI est le dernier épisode de la franchise éponyme, récompensée de nombreuses fois. Repoussez les frontières de votre empire, développez votre patrimoine culturel et affrontez les plus grands seigneurs de l'histoire. Votre civilisation tiendra-t-elle face aux ravages du temps ?",
         "note": 15,
         "price": 59.99,
+        "onCart": false,
         "gotIt": false,
         "personalRank":1
     },
@@ -76,6 +82,7 @@
         "description":"RimWorld suit trois survivants d’un écrasement de vaisseau spatial pendant qu’ils bâtissent leur colonie sur une planète à la frontière de l’espace exploré. Inspiré du genre space western de Firefly, la simulation profonde de Dwarf Fortress, et l’échelle grandiose de Dune et Warhammer 40,000.",
         "note": 14,
         "price": 31.99,
+        "onCart": false,
         "gotIt": false,
         "personalRank":1
     },
@@ -86,6 +93,7 @@
         "description":"Rien ne pourra m'empêcher de rejoindre ma bien-aimée, ma Faith, pas même les îles sauvages et farouches de Kalau'a. Ces jolies filles des îles ne détourneront mon regard que temporairement, car mon cœur n'appartient qu'à Faith !",
         "note": 15,
         "price": 34.99,
+        "onCart": false,
         "gotIt": true,
         "personalRank":4
     },
@@ -96,6 +104,7 @@
         "description":"20 ans plus tard, Day of the Tentacle est de retour en version remastérisée incluant des dessins haute définition inédits et faits à la main, ainsi que musiques, effets sonores et audio remastérisés.",
         "note": 12,
         "price": 14.99,
+        "onCart": false,
         "gotIt": false,
         "personalRank":1
     }

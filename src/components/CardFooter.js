@@ -11,10 +11,10 @@ function CardFooter({ note, price, gotIt }) {
     )
   } else {
     return (
-      <div className="flex flex-row items-center justify-between">
+      <div className="flex flex-row items-center justify-between px-2">
         <div>
-          <p>Note : {note}/20</p>
-          <p>Prix : {price}€</p>
+          <p className="font-semibold text-lg">Note : {note}/20</p>
+          <p className="font-semibold text-lg">Prix : {price}€</p>
         </div>
         <AddToCartButton gotIt={gotIt} />
       </div>

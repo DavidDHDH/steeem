@@ -2,7 +2,7 @@ function AddToCartButton(gotIt) {
   if (gotIt) {
     return (
       <div>
-        <button className="bg-gray-200 h-12 w-12 rounded-2xl flex text-center text-sm items-center justify-center opacity-40 cursor-not-allowed">
+        <button className="bg-gray-200 h-16 w-16 rounded-2xl flex text-center text-sm items-center justify-center opacity-40 cursor-not-allowed">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -23,7 +23,7 @@ function AddToCartButton(gotIt) {
   } else {
     return (
       <div>
-        <button className="bg-gray-200 h-12 w-12 rounded-2xl flex text-center text-sm items-center justify-center">
+        <button className="bg-gray-200 h-16 w-16 rounded-2xl flex text-center text-sm items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
