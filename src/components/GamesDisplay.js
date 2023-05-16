@@ -6,7 +6,6 @@ function GamesDisplay({
   cart,
   setCart,
   search,
-  filter,
   setIsHidden,
   setIsFocus,
 }) {

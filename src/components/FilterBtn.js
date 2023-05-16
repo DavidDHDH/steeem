@@ -6,7 +6,6 @@ function FilterBtn({ name, filter, setFilter }) {
 
   function handleClick(e) {
     e.preventDefault()
-    const value = e.target.value
     const active = () => {
       setActive('buttonactive')
     }

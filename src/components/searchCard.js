@@ -2,9 +2,6 @@ import image404 from '../assets/images/erreur-404-pas-trouve-effet-pepin_8024-4.
 import BtnAddGame from './BtnAddGame'
 
 function SearchCard({ setIsHidden }) {
-  const handleClick = () => {
-    setIsHidden(false)
-  }
   return (
     <>
       <div className="bg-white items-center flex flex-col space-y-4 rounded-lg shadow-md h-auto max-xl:space-y-2 max-h-[580px]">

@@ -24,7 +24,7 @@ function CartGameCard({ title, price, favicon, setCart, cart, id }) {
         <div className="flex flex-col justify-evenly items-end mr-2 max-lg:flex-row-reverse max-lg:justify-between max-lg:mt-0 max-lg:mb-1">
           <p className="font-bold max-xl:text-sm">{price}€</p>
           <button
-            onClick={() => removeItem({ id })}
+            onClick={() => removeItem(id)}
             className="bg-white rounded-md flex justify-center items-center h-6 w-6 max-lg:ml-5"
           >
             <svg
