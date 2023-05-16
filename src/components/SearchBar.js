@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 function SearchBar({ search, setSearch }) {
   const handleChange = (e) => {
     setSearch(e.target.value)

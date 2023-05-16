@@ -1,7 +1,14 @@
 import SearchBar from './SearchBar'
 import FiltersBar from './FiltersBar'
 
-function Header({ search, setSearch, filter, setFilter }) {
+function Header({
+  search,
+  setSearch,
+  filter,
+  setFilter,
+  setGamesData,
+  gamesData,
+}) {
   return (
     <div className="m-12">
       <h1 className="text-center text-5xl uppercase m-10">Steeem</h1>

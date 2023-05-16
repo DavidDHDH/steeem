@@ -14,7 +14,7 @@ function GameCard({
 }) {
   return (
     <>
-      <div className="bg-white items-center flex flex-col space-y-4 rounded-lg shadow-md h-auto max-xl:space-y-2">
+      <div className="bg-white items-center flex flex-col space-y-4 rounded-lg shadow-md h-auto max-h-[580px]  max-xl:space-y-2">
         <div className="h-40 flex max-xl:h-28 max-xl:w-52 max-xl:items-center max-xl:mt-3 max-lg:mt-2 max-lg:w-60">
           <img
             className="rounded-lg"
@@ -27,9 +27,7 @@ function GameCard({
             {title}
           </h2>
           <div className="">
-            <p className="text-center mb-4 h-60 max-xl:h-72 max-xl:overflow-scroll">
-              {description}
-            </p>
+            <p className="text-center mb-4 h-60 max-xl:h-72 ">{description}</p>
             <CardFooter
               className=""
               id={id}

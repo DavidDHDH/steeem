@@ -5,9 +5,8 @@ import { useState } from 'react'
 
 function App() {
   const [search, setSearch] = useState('')
-  const [filter, setFilter] = useState([])
+  const [filter, setFilter] = useState([{ jai: false, jaipas: false }])
   const [gamesData, setGamesData] = useState(games)
-
   return (
     <div className="container mx-auto">
       <Header
@@ -15,8 +14,16 @@ function App() {
         setSearch={setSearch}
         filter={filter}
         setFilter={setFilter}
+        setGamesData={setGamesData}
+        gamesData={gamesData}
       />
-      <Body search={search} gamesData={gamesData} />
+      <Body
+        search={search}
+        setSearch={setSearch}
+        gamesData={gamesData}
+        setGamesData={setGamesData}
+        filter={filter}
+      />
     </div>
   )
 }
