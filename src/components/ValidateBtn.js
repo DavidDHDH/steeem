@@ -3,7 +3,10 @@ function ValidateBtn() {
   return (
     <>
       <div className="flex justify-center">
-        <button onClick={handleClick} className="buttoninactive w-20 h-10">
+        <button
+          onClick={handleClick}
+          className="buttoninactive w-20 h-10 2xl:w-28 2xl:h-10"
+        >
           Payer
         </button>
       </div>

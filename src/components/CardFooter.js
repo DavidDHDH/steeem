@@ -12,8 +12,12 @@ function CardFooter({ ...props }) {
     return (
       <div className="flex flex-row items-center justify-between px-2">
         <div>
-          <p className="font-semibold text-lg">Note : {props.note}/20</p>
-          <p className="font-semibold text-lg">Prix : {props.price}€</p>
+          <p className="font-semibold text-lg max-xl:text-base">
+            Note : {props.note}/20
+          </p>
+          <p className="font-semibold text-lg max-xl:text-base">
+            Prix : {props.price}€
+          </p>
         </div>
         <AddToCartButton
           id={props.id}

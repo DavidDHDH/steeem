@@ -7,7 +7,7 @@ function GamesDisplay({ gamesData, cart, setCart, search }) {
 
   if (search === '') {
     return (
-      <div className="col-span-3 bg-white grid grid-cols-3 gap-4 p-4">
+      <div className="col-span-3 bg-white grid grid-cols-3 gap-4 p-4 2xl:grid-cols-4 max-lg:grid-cols-2">
         {gamesData.map((game) => (
           <GameCard key={game.id} {...game} cart={cart} setCart={setCart} />
         ))}
@@ -15,7 +15,7 @@ function GamesDisplay({ gamesData, cart, setCart, search }) {
     )
   } else if (filteredGames.length > 0) {
     return (
-      <div className="col-span-3 bg-white grid grid-cols-3 gap-4 p-4">
+      <div className="col-span-3 bg-white grid grid-cols-3 gap-4 p-4 2xl:grid-cols-4">
         {filteredGames.map((game) => (
           <GameCard key={game.id} {...game} cart={cart} setCart={setCart} />
         ))}
@@ -23,7 +23,7 @@ function GamesDisplay({ gamesData, cart, setCart, search }) {
     )
   } else {
     return (
-      <div className="col-span-3 bg-white grid grid-cols-3 gap-4 p-4"></div>
+      <div className="col-span-3 bg-white grid grid-cols-3 gap-4 p-4 2xl:grid-cols-4"></div>
     )
   }
 }

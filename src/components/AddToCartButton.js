@@ -11,7 +11,7 @@ function AddToCartButton({ id, cart, setCart, title, favicon, price }) {
   if (onCart) {
     return (
       <div>
-        <button className="bg-green-200 h-16 w-16 rounded-2xl flex text-center text-sm items-center justify-center opacity-40 cursor-not-allowed">
+        <button className="bg-green-200 h-16 w-16 rounded-2xl flex text-center text-sm items-center justify-center opacity-40 cursor-not-allowed max-xl:h-14 max-xl:w-14">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -34,7 +34,7 @@ function AddToCartButton({ id, cart, setCart, title, favicon, price }) {
       <div>
         <button
           onClick={() => handleClick({ id })}
-          className="bg-gray-200 h-16 w-16 rounded-2xl flex text-center text-sm items-center justify-center hover:bg-gray-300"
+          className="bg-gray-200 h-16 w-16 rounded-2xl flex text-center text-sm items-center justify-center hover:bg-gray-300 max-xl:h-14 max-xl:w-14"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
