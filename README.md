@@ -1,3 +1,20 @@
+First challenge to finish the first React module from React Mastery (Mike Codeur), using useState. Fake 10 videogames' list in the file.
+
+v1 final :
+
+- search to filter display
+- add to cart
+- clean cart
+- note a video game in my possession
+- add a video game in the list
+- responsive design (not perfect)
+
+Not working yet in v1 :
+
+- individual trash in the cart
+- search bar filter
+- the money does not arrive on my bank account
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
