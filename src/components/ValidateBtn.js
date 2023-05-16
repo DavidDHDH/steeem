@@ -1,5 +1,8 @@
-function ValidateBtn() {
-  const handleClick = () => alert('Merci')
+function ValidateBtn({ setCart }) {
+  const handleClick = () => {
+    alert('Merci !')
+    setCart([])
+  }
   return (
     <>
       <div className="flex justify-center">

@@ -31,13 +31,13 @@ function Cart({
           </h1>
           <CartList cart={cart} setCart={setCart} />
           <div className="flex justify-between mx-4 2xl:mx-6 mb-4 max-lg:mx-1">
-            <CleanCart setCart={setCart} cart={cart} />
+            <CleanCart setCart={setCart} />
             <p className="font-bold text-end text-xl max-xl:text-lg max-lg:text-base">
               Total : <br />
               {totalCost}€
             </p>
           </div>
-          <ValidateBtn />
+          <ValidateBtn setCart={setCart} />
           <div className="mx-4">
             <BtnAddGame
               setIsHidden={setIsHidden}

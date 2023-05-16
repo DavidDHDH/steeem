@@ -1,4 +1,4 @@
-function CleanCart({ cart, setCart }) {
+function CleanCart({ setCart }) {
   const handleClick = () => setCart([])
 
   return (
