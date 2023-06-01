@@ -1,6 +1,7 @@
-function ValidateBtn({ setCart }) {
+function ValidateBtn({ cart, setCart, setGamesData }) {
   const handleClick = () => {
     alert('Merci !')
+
     setCart([])
   }
   return (

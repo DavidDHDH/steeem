@@ -1,13 +1,19 @@
+import { useEffect, useRef } from 'react'
+
 function SearchBar({ search, setSearch }) {
+  const inputRef = useRef(null)
   const handleChange = (e) => {
     setSearch(e.target.value)
   }
+
+  useEffect(() => inputRef.current.focus(), [])
 
   const resetSearch = () => setSearch('')
 
   return (
     <div className="flex justify-center border w-full">
       <input
+        ref={inputRef}
         type="text"
         onChange={handleChange}
         name="search"
@@ -31,6 +37,9 @@ function SearchBar({ search, setSearch }) {
           />
         </svg>
       </button>
+      <div className="bg-slate-300 flex rounded-lg">
+        <button className="px-4">Search</button>
+      </div>
     </div>
   )
 }

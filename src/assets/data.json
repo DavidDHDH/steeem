@@ -21,7 +21,7 @@
         "price": 24.99,
         "onCart": false,
         "gotIt": true,
-        "personalRank":4
+        "personalRank":null
     },
     {
         "id": 3,
@@ -34,7 +34,7 @@
         "price": 44.99,
         "onCart": false,
         "gotIt": true,
-        "personalRank":5
+        "personalRank":null
     },
     { 
         "id": 4,
@@ -46,7 +46,7 @@
         "price": 69.99,
         "onCart": false,
         "gotIt": false,
-        "personalRank":1
+        "personalRank":null
     },
     {
         "id": 5,
@@ -58,7 +58,7 @@
         "price": 39.99,
         "onCart": false,
         "gotIt": false,
-        "personalRank":1
+        "personalRank":null
     },
     {
         "id": 6,
@@ -70,7 +70,7 @@
         "price": 28.99,
         "onCart": false,
         "gotIt": false,
-        "personalRank":1
+        "personalRank":null
     },
     {
         "id": 7,
@@ -82,7 +82,7 @@
         "price": 59.99,
         "onCart": false,
         "gotIt": false,
-        "personalRank":1
+        "personalRank":null
     },
     {
         "id": 8,
@@ -94,7 +94,7 @@
         "price": 31.99,
         "onCart": false,
         "gotIt": false,
-        "personalRank":1
+        "personalRank":null
     },
     {
         "id": 9,
@@ -106,7 +106,7 @@
         "price": 34.99,
         "onCart": false,
         "gotIt": false,
-        "personalRank":4
+        "personalRank":null
     },
     {
         "id": 10,
@@ -118,6 +118,6 @@
         "price": 14.99,
         "onCart": false,
         "gotIt": false,
-        "personalRank":1
+        "personalRank":null
     }
 ]

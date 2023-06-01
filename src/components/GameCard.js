@@ -15,9 +15,9 @@ function GameCard({
   return (
     <>
       <div className="bg-white items-center flex flex-col space-y-4 rounded-lg shadow-md h-auto max-h-[580px]  max-xl:space-y-2">
-        <div className="h-40 flex max-xl:h-28 max-xl:w-52 max-xl:items-center max-xl:mt-3 max-lg:mt-2 max-lg:w-60">
+        <div className="flex flex-col items-center  max-xl:mt-3 max-lg:mt-2 ">
           <img
-            className="rounded-lg"
+            className="rounded-lg h-40 max-xl:h-28 max-xl:w-52 max-lg:w-60"
             src={image}
             alt="Couverture du jeu vidéo"
           ></img>

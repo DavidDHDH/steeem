@@ -1,5 +1,8 @@
-function BtnAddGame({ setIsHidden, className }) {
-  const handleClick = () => setIsHidden(false)
+function BtnAddGame({ setIsHidden, addTitleRef }) {
+  const handleClick = () => {
+    setIsHidden(false)
+    addTitleRef()
+  }
 
   return (
     <div className="flex justify-center">

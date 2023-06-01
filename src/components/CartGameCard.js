@@ -1,9 +1,6 @@
 function CartGameCard({ title, price, favicon, setCart, cart, id }) {
   function removeItem(id) {
-    console.log(id)
-    console.log(cart)
     const newList = cart.filter((item) => item.id !== id)
-    console.log(newList)
 
     setCart(newList)
   }

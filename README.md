@@ -11,7 +11,7 @@ v1 final :
 
 Not working yet in v1 :
 
-- search bar filter
+- search bar blue filters
 - games money does not arrive on my bank account
 
 # Getting Started with Create React App

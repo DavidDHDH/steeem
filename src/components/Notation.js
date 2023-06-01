@@ -10,7 +10,7 @@ function Notation() {
     case 1:
       return (
         <div className="flex flex-row justify-center items-center space-x-4 py-5 ">
-          <div className="cursor-pointer">
+          <div onClick={() => handleClick(1)} className="cursor-pointer">
             <svg
               width="24"
               height="24"
