@@ -10,7 +10,6 @@ function GameCard({
   gotIt,
   cart,
   setCart,
-  favicon,
 }) {
   return (
     <>

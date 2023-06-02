@@ -4,8 +4,7 @@ import FiltersBar from './FiltersBar'
 function Header({ search, setSearch, setGamesData, gamesData }) {
   return (
     <div className="m-12 mb-20">
-      <h1 className="text-center text-5xl uppercase m-10">Steeem</h1>
-
+      <h1 className="text-center text-8xl uppercase m-20">Steeem</h1>
       <div className="flex flex-col items-center mx-auto w-96 space-y-3">
         <SearchBar search={search} setSearch={setSearch} />
         <p className="text-center text-gray-500">

@@ -2,7 +2,7 @@ import Header from '../components/Header'
 import Body from '../components/Body'
 // import games from '../assets/data'
 import { useEffect, useState } from 'react'
-import { rapidAPIhost, rapidAPIkey } from '../api'
+import { rapidAPIhost, rapidAPIkey } from './config'
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min)

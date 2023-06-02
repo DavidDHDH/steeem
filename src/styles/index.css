@@ -7,6 +7,10 @@ body {
   /* background-attachment: fixed; */
 }
 
+h1 {
+  font-family: 'Monomaniac One', sans-serif;
+}
+
 @tailwind components;
 @tailwind utilities;
 
