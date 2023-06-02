@@ -2,6 +2,7 @@ import Header from '../components/Header'
 import Body from '../components/Body'
 // import games from '../assets/data'
 import { useEffect, useState } from 'react'
+import { rapidAPIhost, rapidAPIkey } from '../api'
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min)
@@ -26,8 +27,8 @@ function App() {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '894e1bfc3bmsh75229056e85c892p19174ejsnc0d08be616d8',
-      'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
+      'X-RapidAPI-Key': rapidAPIkey,
+      'X-RapidAPI-Host': rapidAPIhost,
     },
   }
   useEffect(() => {
