@@ -1,7 +1,7 @@
 function ValidateBtn({ cart, setCart, setGamesData, gamesData }) {
   const handleClick = () => {
     console.log(cart)
-    // alert('Merci, TOUT DROIT SUR MON COMPTE !')
+    alert('Merci, TOUT DROIT SUR MON COMPTE !')
 
     const newDataGames = gamesData.map((game) => {
       const jeuDansPanier = cart.find((jeuPanier) => jeuPanier.id === game.id)

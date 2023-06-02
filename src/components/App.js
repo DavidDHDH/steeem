@@ -45,7 +45,7 @@ function App() {
   }
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mt-32">
       <Header
         search={search}
         setSearch={setSearch}
