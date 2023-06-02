@@ -37,9 +37,6 @@ function SearchBar({ search, setSearch }) {
           />
         </svg>
       </button>
-      <div className="bg-slate-300 flex rounded-lg">
-        <button className="px-4">Search</button>
-      </div>
     </div>
   )
 }

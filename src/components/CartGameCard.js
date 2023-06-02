@@ -7,18 +7,18 @@ function CartGameCard({ title, price, thumbnail, setCart, cart, id }) {
 
   return (
     <>
-      <div className="flex justify-between bg-white rounded-sm border shadow-md max-lg:flex-col">
+      <div className="flex justify-between bg-white rounded-sm border shadow-md max-lg:flex-col max-sm:flex-row">
         <div className="flex items-center m-1 max-lg:text-end max-lg:mx-2 max-lg:mt-1">
           <img
             src={thumbnail}
-            className="h-12 w-12 object-center object-cover n m-1 max-lg:m-0"
+            className="h-12 w-12 object-center object-cover m-1 max-lg:m-0"
             alt="Couverture jeu video"
           ></img>
-          <h1 className="ml-2 w-28 font-semibold text-sm max-xl:text-xs">
+          <h1 className="ml-2 w-28 font-semibold text-sm max-xl:text-xs max-sm:text-base ">
             {title}
           </h1>
         </div>
-        <div className="flex flex-col justify-evenly items-end mr-2 max-lg:flex-row-reverse max-lg:justify-between max-lg:mt-0 max-lg:mb-1">
+        <div className="flex flex-col justify-evenly items-end mr-2 max-lg:flex-row-reverse max-lg:justify-between max-lg:mt-0 max-lg:mb-1 max-sm:flex-col">
           <p className="font-bold max-xl:text-sm">{price}€</p>
           <button
             onClick={() => removeItem(id)}

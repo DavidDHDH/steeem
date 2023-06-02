@@ -4,18 +4,18 @@ import Notation from './Notation'
 function CardFooter({ ...props }) {
   if (props.gotIt) {
     return (
-      <div className="b">
+      <div>
         <Notation />
       </div>
     )
   } else {
     return (
-      <div className="flex flex-row items-center justify-between px-2">
+      <div className="flex flex-row items-center justify-between px-2 ">
         <div>
-          <p className="font-semibold text-lg max-xl:text-base">
+          <p className="font-semibold text-lg max-xl:text-sm ">
             Note : {props.note}/20
           </p>
-          <p className="font-semibold text-lg max-xl:text-base">
+          <p className="font-semibold text-lg max-xl:text-sm ">
             Prix : {props.price}€
           </p>
         </div>
