@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 function AddToCartButton({ id, cart, setCart, title, thumbnail, price }) {
   const onCart = cart.find((game) => game.id === id)
 

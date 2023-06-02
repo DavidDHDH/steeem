@@ -43,6 +43,7 @@ function Cart({
             cart={cart}
             setCart={setCart}
             setGamesData={setGamesData}
+            gamesData={gamesData}
           />
           <div className="mx-4">
             <BtnAddGame
