@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/steeem/static/css/main.3163d0bb.css",
-    "main.js": "/steeem/static/js/main.72fc6bb4.js",
+    "main.css": "/steeem/static/css/main.8ce9fd2e.css",
+    "main.js": "/steeem/static/js/main.ee885f73.js",
     "static/media/v748-toon-111.jpg": "/steeem/static/media/v748-toon-111.a49ed7d7564b1870f5bf.jpg",
     "static/media/erreur-404-pas-trouve-effet-pepin_8024-4.avif": "/steeem/static/media/erreur-404-pas-trouve-effet-pepin_8024-4.94dbe8642b83aa5ae0d8.avif",
     "index.html": "/steeem/index.html",
-    "main.3163d0bb.css.map": "/steeem/static/css/main.3163d0bb.css.map",
-    "main.72fc6bb4.js.map": "/steeem/static/js/main.72fc6bb4.js.map"
+    "main.8ce9fd2e.css.map": "/steeem/static/css/main.8ce9fd2e.css.map",
+    "main.ee885f73.js.map": "/steeem/static/js/main.ee885f73.js.map"
   },
   "entrypoints": [
-    "static/css/main.3163d0bb.css",
-    "static/js/main.72fc6bb4.js"
+    "static/css/main.8ce9fd2e.css",
+    "static/js/main.ee885f73.js"
   ]
 }
