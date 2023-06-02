@@ -21,7 +21,7 @@ function CardFooter({ ...props }) {
         </div>
         <AddToCartButton
           id={props.id}
-          favicon={props.favicon}
+          thumbnail={props.thumbnail}
           title={props.title}
           cart={props.cart}
           setCart={props.setCart}

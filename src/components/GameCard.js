@@ -3,8 +3,8 @@ import CardFooter from './CardFooter'
 function GameCard({
   id,
   title,
-  description,
-  image,
+  short_description,
+  thumbnail,
   note,
   price,
   gotIt,
@@ -18,7 +18,7 @@ function GameCard({
         <div className="flex flex-col items-center  max-xl:mt-3 max-lg:mt-2 ">
           <img
             className="rounded-lg h-40 max-xl:h-28 max-xl:w-52 max-lg:w-60"
-            src={image}
+            src={thumbnail}
             alt="Couverture du jeu vidéo"
           ></img>
         </div>
@@ -27,7 +27,9 @@ function GameCard({
             {title}
           </h2>
           <div className="">
-            <p className="text-center mb-4 h-60 max-xl:h-72 ">{description}</p>
+            <p className="text-center mb-4 h-60 max-xl:h-72 ">
+              {short_description}
+            </p>
             <CardFooter
               className=""
               id={id}
@@ -37,7 +39,7 @@ function GameCard({
               gotIt={gotIt}
               cart={cart}
               setCart={setCart}
-              favicon={favicon}
+              thumbnail={thumbnail}
             />
           </div>
         </div>

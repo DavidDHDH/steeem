@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-function AddToCartButton({ id, cart, setCart, title, favicon, price }) {
+function AddToCartButton({ id, cart, setCart, title, thumbnail, price }) {
   const [inactive, setInactive] = useState(false)
 
   const onCart = cart.find((game) => game.id === id)
 
   const handleClick = () => {
-    setCart([...cart, { id, title, favicon, price }])
+    setCart([...cart, { id, title, thumbnail, price }])
   }
   if (onCart) {
     return (

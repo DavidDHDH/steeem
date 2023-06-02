@@ -27,9 +27,9 @@ function AddGame({
     e.preventDefault()
     const newGame = {
       id: Math.random(),
-      image: newImage,
+      thumbnail: newImage,
       title: newTitle,
-      description: newDescription,
+      short_description: newDescription,
       gotIt: true,
     }
     setNewTitle('')

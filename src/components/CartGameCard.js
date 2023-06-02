@@ -1,4 +1,4 @@
-function CartGameCard({ title, price, favicon, setCart, cart, id }) {
+function CartGameCard({ title, price, thumbnail, setCart, cart, id }) {
   function removeItem(id) {
     const newList = cart.filter((item) => item.id !== id)
 
@@ -10,7 +10,7 @@ function CartGameCard({ title, price, favicon, setCart, cart, id }) {
       <div className="flex justify-between bg-white rounded-sm border shadow-md max-lg:flex-col">
         <div className="flex items-center m-1 max-lg:text-end max-lg:mx-2 max-lg:mt-1">
           <img
-            src={favicon}
+            src={thumbnail}
             className="h-12 w-12 object-center object-cover n m-1 max-lg:m-0"
             alt="Couverture jeu video"
           ></img>
