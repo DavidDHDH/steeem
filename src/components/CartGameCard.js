@@ -14,9 +14,9 @@ function CartGameCard({ title, price, thumbnail, setCart, cart, id }) {
             className="h-12 w-12 object-center object-cover m-1 max-lg:m-0"
             alt="Couverture jeu video"
           ></img>
-          <h1 className="ml-2 w-28 font-semibold text-sm max-xl:text-xs max-sm:text-base ">
+          <h3 className="ml-2 w-28 font-semibold text-sm max-xl:text-xs max-sm:text-base ">
             {title}
-          </h1>
+          </h3>
         </div>
         <div className="flex flex-col justify-evenly items-end mr-2 max-lg:flex-row-reverse max-lg:justify-between max-lg:mt-0 max-lg:mb-1 max-sm:flex-col">
           <p className="font-bold max-xl:text-sm">{price}€</p>

@@ -12,7 +12,6 @@ function Cart({
   isHidden,
   setIsHidden,
   setSearch,
-  addTitleRef,
 }) {
   const totalCost =
     Math.round(cart.reduce((acc, val) => acc + val.price, 0) * 100) / 100
@@ -26,7 +25,6 @@ function Cart({
             isHidden={isHidden}
             setIsHidden={setIsHidden}
             setSearch={setSearch}
-            addTitleRef={addTitleRef}
           />
           <h1 className=" text-3xl text-center my-7 max-xl:text-2xl max-lg:text-xl max-lg:my-4 ">
             Mon panier ({cart.length})

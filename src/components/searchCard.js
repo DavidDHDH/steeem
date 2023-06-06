@@ -1,7 +1,7 @@
 import image404 from '../assets/images/erreur-404-pas-trouve-effet-pepin_8024-4.avif'
 import BtnAddGame from './BtnAddGame'
 
-function SearchCard({ setIsHidden, addTitleRef }) {
+function SearchCard({ setIsHidden }) {
   return (
     <>
       <div className="bg-white items-center flex flex-col space-y-4 rounded-lg shadow-md h-auto max-xl:space-y-2 max-h-[580px]">
@@ -16,7 +16,7 @@ function SearchCard({ setIsHidden, addTitleRef }) {
           <h2 className="text-center font-semibold text-2xl h-fit mb-3 2xl:text-xl max-xl:text-lg">
             Vous ne trouvez pas ?
           </h2>
-          <BtnAddGame setIsHidden={setIsHidden} addTitleRef={addTitleRef} />
+          <BtnAddGame setIsHidden={setIsHidden} />
         </div>
       </div>
     </>

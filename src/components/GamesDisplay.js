@@ -1,15 +1,7 @@
 import GameCard from './GameCard'
 import SearchCard from './searchCard'
 
-function GamesDisplay({
-  gamesData,
-  setGamesData,
-  cart,
-  setCart,
-  search,
-  setIsHidden,
-  addTitleRef,
-}) {
+function GamesDisplay({ gamesData, cart, setCart, search, setIsHidden }) {
   const filteredGames = gamesData.filter((game) =>
     game.title.toLowerCase().includes(search.toLowerCase())
   )
@@ -20,7 +12,7 @@ function GamesDisplay({
         {gamesData.map((game) => (
           <GameCard key={game.id} {...game} cart={cart} setCart={setCart} />
         ))}
-        <SearchCard setIsHidden={setIsHidden} addTitleRef={addTitleRef} />
+        <SearchCard setIsHidden={setIsHidden} />
       </div>
     )
   } else if (filteredGames.length > 0) {
@@ -29,13 +21,13 @@ function GamesDisplay({
         {filteredGames.map((game) => (
           <GameCard key={game.id} {...game} cart={cart} setCart={setCart} />
         ))}
-        <SearchCard setIsHidden={setIsHidden} addTitleRef={addTitleRef} />
+        <SearchCard setIsHidden={setIsHidden} />
       </div>
     )
   } else {
     return (
       <div className="col-span-3 bg-white grid grid-cols-4 gap-4 p-4 max-sm:grid-cols-1 max-sm:grid-span-1">
-        <SearchCard setIsHidden={setIsHidden} addTitleRef={addTitleRef} />
+        <SearchCard setIsHidden={setIsHidden} />
       </div>
     )
   }

@@ -1,4 +1,4 @@
-function BtnAddGame({ setIsHidden, addTitleRef }) {
+function BtnAddGame({ setIsHidden }) {
   const handleClick = () => {
     setIsHidden(false)
   }

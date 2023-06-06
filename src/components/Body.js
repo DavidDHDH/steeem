@@ -1,13 +1,11 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import Cart from './Cart'
 import GamesDisplay from './GamesDisplay'
 
 function Body({ ...props }) {
   const [cart, setCart] = useState([])
   const [isHidden, setIsHidden] = useState(true)
-  const addTitleRef = useRef(null)
 
-  const handleClickFocus = () => addTitleRef.current.focus()
   return (
     <div className="bg-gray-100 bg-opacity-70 grid grid-cols-4 border rounded-md max-sm:grid-cols-2">
       <GamesDisplay
@@ -18,7 +16,6 @@ function Body({ ...props }) {
         setCart={setCart}
         filter={props.filter}
         setIsHidden={setIsHidden}
-        addTitleRef={handleClickFocus}
       />
       <Cart
         cart={cart}
@@ -28,7 +25,6 @@ function Body({ ...props }) {
         isHidden={isHidden}
         setIsHidden={setIsHidden}
         setSearch={props.setSearch}
-        addTitleRef={addTitleRef}
       />
     </div>
   )

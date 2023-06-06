@@ -6,7 +6,6 @@ function AddGame({
   isHidden,
   setIsHidden,
   setSearch,
-  addTitleRef,
 }) {
   const [newTitle, setNewTitle] = useState('')
   const [newDescription, setnewDescription] = useState('')
@@ -76,7 +75,6 @@ function AddGame({
             placeholder="max 30 caractères"
             value={newTitle}
             maxLength={30}
-            ref={addTitleRef}
             required
           />
         </label>
