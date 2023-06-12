@@ -2,7 +2,6 @@ import Header from '../components/Header'
 import Body from '../components/Body'
 import { useEffect, useState, useReducer } from 'react'
 import { rapidAPIhost, rapidAPIkey } from './config'
-import SkeletonCard from './skeletonCard'
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min)
@@ -17,15 +16,6 @@ const newJson = (games) => {
   }
 }
 
-const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games'
-const options = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': rapidAPIkey,
-    'X-RapidAPI-Host': rapidAPIhost,
-  },
-}
-
 function reducer(state, action) {
   switch (action.type) {
     case 'fetching':
@@ -37,6 +27,15 @@ function reducer(state, action) {
     default:
       throw new Error('Action non supporté')
   }
+}
+
+const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games'
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': rapidAPIkey,
+    'X-RapidAPI-Host': rapidAPIhost,
+  },
 }
 
 function App() {
@@ -56,7 +55,8 @@ function App() {
       .then((r) => r.json())
       .then((json) => {
         newJson(json)
-        dispatch({ type: 'done', payload: json })
+        console.log(json)
+        dispatch({ type: 'done' })
         setGamesData(json)
       })
       .catch((error) => dispatch({ type: 'fail', payload: error }))
