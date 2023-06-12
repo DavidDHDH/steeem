@@ -7,7 +7,7 @@ import { ErrorBoundary } from 'react-error-boundary'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <ErrorBoundary fallback={<p>Something went wrong</p>}>
+    <ErrorBoundary key={Math.random()} fallback={<p>Something went wrong</p>}>
       <App />
     </ErrorBoundary>
   </React.StrictMode>

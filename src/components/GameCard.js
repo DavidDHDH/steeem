@@ -16,7 +16,7 @@ function GameCard({
 }) {
   return (
     <>
-      <div className=" bg-white rounded-lg h-[400] shadow-md flex flex-col">
+      <div className=" bg-white rounded-lg shadow-md flex flex-col">
         <a href={game_url} target="_blank" rel="noreferrer">
           <img
             className="rounded-lg w-full"

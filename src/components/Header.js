@@ -1,7 +1,6 @@
 import SearchBar from './SearchBar'
-import FiltersBar from './FiltersBar'
 
-function Header({ search, setSearch, setGamesData, gamesData }) {
+function Header({ search, setSearch }) {
   return (
     <div className="m-12 mb-20">
       <h1 className="text-center text-8xl uppercase m-20">Steeem</h1>
@@ -9,7 +8,11 @@ function Header({ search, setSearch, setGamesData, gamesData }) {
         <SearchBar search={search} setSearch={setSearch} />
         <p className="text-center text-gray-500">
           Données provenant de l'API{' '}
-          <a className="" href="https://www.freetogame.com/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.freetogame.com/"
+          >
             https://www.freetogame.com/
           </a>{' '}
           <br />

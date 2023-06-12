@@ -16,6 +16,7 @@ function Body({ ...props }) {
         setCart={setCart}
         filter={props.filter}
         setIsHidden={setIsHidden}
+        status={props.status}
       />
       <Cart
         cart={cart}

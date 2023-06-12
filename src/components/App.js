@@ -1,15 +1,14 @@
 import Header from '../components/Header'
 import Body from '../components/Body'
-// import games from '../assets/data'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useReducer } from 'react'
 import { rapidAPIhost, rapidAPIkey } from './config'
+import SkeletonCard from './skeletonCard'
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min)
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
-
 const newJson = (games) => {
   for (let game of games) {
     game.price = getRandomIntInclusive(1, 69)
@@ -18,27 +17,49 @@ const newJson = (games) => {
   }
 }
 
+const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games'
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': rapidAPIkey,
+    'X-RapidAPI-Host': rapidAPIhost,
+  },
+}
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'fetching':
+      return { status: 'fetching', data: null, error: null }
+    case 'done':
+      return { status: 'done', data: action.payload, error: null }
+    case 'fail':
+      return { status: 'fail', data: null, error: action.error }
+    default:
+      throw new Error('Action non supporté')
+  }
+}
+
 function App() {
   const [search, setSearch] = useState('')
   const [gamesData, setGamesData] = useState([])
-  const [error, setError] = useState(false)
+  const [state, dispatch] = useReducer(reducer, {
+    status: 'idle',
+    data: null,
+    error: null,
+  })
+  const { status, data, error } = state
+  console.log(status)
 
-  const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games'
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': rapidAPIkey,
-      'X-RapidAPI-Host': rapidAPIhost,
-    },
-  }
   useEffect(() => {
+    dispatch({ type: 'fetching' })
     fetch(url, options)
       .then((r) => r.json())
       .then((json) => {
         newJson(json)
+        dispatch({ type: 'done', payload: json })
         setGamesData(json)
       })
-      .catch((error) => setError(error))
+      .catch((error) => dispatch({ type: 'fail', payload: error }))
   }, [])
 
   if (error) {
@@ -47,17 +68,13 @@ function App() {
 
   return (
     <div className="container mx-auto mt-32">
-      <Header
-        search={search}
-        setSearch={setSearch}
-        setGamesData={setGamesData}
-        gamesData={gamesData}
-      />
+      <Header search={search} setSearch={setSearch} />
       <Body
         search={search}
         setSearch={setSearch}
         gamesData={gamesData}
         setGamesData={setGamesData}
+        status={status}
       />
     </div>
   )

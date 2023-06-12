@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 function AddGame({
   setGamesData,
@@ -10,6 +10,7 @@ function AddGame({
   const [newTitle, setNewTitle] = useState('')
   const [newDescription, setnewDescription] = useState('')
   const [newImage, setnewImage] = useState('')
+  const titleInput = useRef()
 
   const handleClick = () => setIsHidden(true)
 
@@ -37,6 +38,10 @@ function AddGame({
     setGamesData([newGame, ...gamesData])
     setSearch('')
   }
+
+  useEffect(() => {
+    titleInput.current.focus()
+  })
 
   return (
     <div className="my-10" hidden={isHidden}>
@@ -75,6 +80,7 @@ function AddGame({
             placeholder="max 30 caractères"
             value={newTitle}
             maxLength={30}
+            ref={titleInput}
             required
           />
         </label>
