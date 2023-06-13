@@ -41,6 +41,7 @@ function App() {
   })
   const { status, data, error } = state
   const authDispatch = useContext(LoggedContext)
+  const setGamesData = (games) => dispatch({ type: 'ADD_DATA', payload: games })
 
   const logOut = () => {
     authDispatch({ type: 'LOG_OUT' })
@@ -64,10 +65,8 @@ function App() {
       })
   }, [])
 
-  const setGamesData = (game) => dispatch({ type: 'ADD_DATA', payload: game })
-
   if (error) {
-    throw new Error('Il y a un problème ' + error.status)
+    throw new Error(error.status)
   }
 
   return (

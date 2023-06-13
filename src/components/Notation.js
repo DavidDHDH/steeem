@@ -9,7 +9,7 @@ function Notation() {
   switch (note) {
     case 1:
       return (
-        <div className="flex flex-row justify-center items-center space-x-4 py-5 ">
+        <div className="flex flex-row justify-center items-center space-x-4 py-5 flex-wrap">
           <div onClick={() => handleClick(1)} className="cursor-pointer">
             <svg
               width="24"
@@ -100,7 +100,7 @@ function Notation() {
       break
     case 2:
       return (
-        <div className="flex flex-row justify-center space-x-4 py-5 ">
+        <div className="flex flex-row justify-center items-center space-x-4 py-5 flex-wrap">
           <div onClick={() => handleClick(1)} className="cursor-pointer">
             <svg
               width="24"
@@ -192,7 +192,7 @@ function Notation() {
       break
     case 3:
       return (
-        <div className="flex flex-row justify-center space-x-4 py-5 ">
+        <div className="flex flex-row justify-center items-center space-x-4 py-5 flex-wrap">
           <div onClick={() => handleClick(1)} className="cursor-pointer">
             <svg
               width="24"
@@ -284,7 +284,7 @@ function Notation() {
       break
     case 4:
       return (
-        <div className="flex flex-row justify-center space-x-4 py-5 ">
+        <div className="flex flex-row justify-center items-center space-x-4 py-5 flex-wrap">
           <div onClick={() => handleClick(1)} className="cursor-pointer">
             <svg
               width="24"
@@ -376,7 +376,7 @@ function Notation() {
       break
     case 5:
       return (
-        <div className="flex flex-row justify-center space-x-4 py-5 ">
+        <div className="flex flex-row justify-center items-center space-x-4 py-5 flex-wrap">
           <div onClick={() => handleClick(1)} className="cursor-pointer">
             <svg
               width="24"
@@ -468,7 +468,7 @@ function Notation() {
       break
     default:
       return (
-        <div className="flex flex-row justify-center space-x-4 py-5 ">
+        <div className="flex flex-row justify-center space-x-4 py-5 flex-wrap">
           <div onClick={() => handleClick(1)} className="cursor-pointer">
             <svg
               width="24"

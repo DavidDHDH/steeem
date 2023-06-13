@@ -24,7 +24,7 @@ function GamesDisplay({
         <SearchCard setIsHidden={setIsHidden} />
       </div>
     )
-  } else if (status === 'done') {
+  } else if (status === 'done' || status === 'updated') {
     if (search === '') {
       return (
         <div className="col-span-3 grid grid-cols-4 gap-4 p-4 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:col-span-1">
@@ -36,7 +36,7 @@ function GamesDisplay({
       )
     } else if (filteredGames.length > 0) {
       return (
-        <div className="col-span-3 grid grid-cols-4 gap-4 p-4 max-sm:grid-cols-1 max-sm:grid-span-1">
+        <div className="col-span-3 grid grid-cols-4 gap-4 p-4 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:col-span-1">
           {filteredGames.map((game) => (
             <GameCard key={game.id} {...game} cart={cart} setCart={setCart} />
           ))}
@@ -45,7 +45,7 @@ function GamesDisplay({
       )
     } else {
       return (
-        <div className="col-span-3 grid grid-cols-4 gap-4 p-4 max-sm:grid-cols-1 max-sm:grid-span-1">
+        <div className="col-span-3 grid grid-cols-4 gap-4 p-4 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:col-span-1">
           <SearchCard setIsHidden={setIsHidden} />
         </div>
       )

@@ -5,7 +5,6 @@ import GamesDisplay from './GamesDisplay'
 function Body({ ...props }) {
   const [cart, setCart] = useState([])
   const [isHidden, setIsHidden] = useState(true)
-
   return (
     <div className="bg-gray-100 bg-opacity-70 grid grid-cols-4 border rounded-md max-sm:grid-cols-2">
       <GamesDisplay

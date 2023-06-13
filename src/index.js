@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client'
 import './styles/index.css'
 import { ErrorBoundary } from 'react-error-boundary'
 import Authentification from './components/Authentification'
+import ErrorDisplay from './components/errorDisplay'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <ErrorBoundary key={Math.random()} fallback={<p>Something went wrong</p>}>
+    <ErrorBoundary key={Math.random()} FallbackComponent={ErrorDisplay}>
       <Authentification />
     </ErrorBoundary>
   </React.StrictMode>

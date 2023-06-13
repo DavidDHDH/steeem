@@ -59,11 +59,11 @@ function Authentification() {
   const handlePasswordChange = (e) => {
     dispatch({ type: 'SET_PASSWORD', payload: e.target.value })
   }
-  const handleChangeRemember = () => {
-    dispatch({ type: 'SET_REMEMBER', payload: !checkedRemember })
+  const handleChangeRemember = (e) => {
+    dispatch({ type: 'SET_REMEMBER', payload: e.target.checked })
   }
-  const handleChangeStay = () => {
-    dispatch({ type: 'SET_STAYCONNECTED', payload: !checkedStayConnected })
+  const handleChangeStay = (e) => {
+    dispatch({ type: 'SET_STAYCONNECTED', payload: e.target.checked })
     if (localStorage.getItem('loggedIn')) {
       localStorage.removeItem('loggedIn')
     }

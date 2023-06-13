@@ -23,14 +23,10 @@ function AddGame({
   setIsHidden,
   setSearch,
 }) {
-  // const [newTitle, setNewTitle] = useState('')
-  // const [newDescription, setnewDescription] = useState('')
-  // const [newImage, setnewImage] = useState('')
   const titleInput = useRef()
 
   const [state, dispatch] = useReducer(reducer, initialState)
   const { newTitle, newDescription, newImage } = state
-
   const handleClick = () => setIsHidden(true)
 
   const handleChangeTitle = (e) => {
@@ -52,7 +48,8 @@ function AddGame({
       gotIt: true,
     }
     dispatch({ type: 'CLEAR' })
-    setGamesData([newGame, ...gamesData])
+    const games = [newGame, ...gamesData]
+    setGamesData(games)
     setSearch('')
   }
 

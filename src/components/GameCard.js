@@ -16,7 +16,7 @@ function GameCard({
 }) {
   return (
     <>
-      <div className=" bg-white rounded-lg shadow-md flex flex-col">
+      <div className=" bg-white rounded-lg shadow-md flex flex-col max-h-[580px]">
         <a href={game_url} target="_blank" rel="noreferrer">
           <img
             className="rounded-lg w-full"
@@ -28,7 +28,7 @@ function GameCard({
           <h2 className=" text-center font-semibold text-lg h-fit mb-3">
             {title}
           </h2>
-          <div className="text-center pb-3 flex justify-around">
+          <div className="text-center pb-3 flex justify-around flex-wrap">
             <div className="bg-red-100 p-1 rounded-xl text-sm flex items-center md:text-base md:px-3 lg:px-1 lg:text-sm xl:px-2 2xl:text-base 2xl:px-3">
               {genre}
             </div>
@@ -42,7 +42,6 @@ function GameCard({
         </div>
         <div className="p-3">
           <CardFooter
-            className=""
             id={id}
             title={title}
             note={note}
