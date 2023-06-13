@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState, useReducer, createContext } from 'react'
+import { useEffect, useRef, useReducer, createContext } from 'react'
+
 import users from '../assets/users.json'
 import App from './App'
+import { TextField, Box } from '@mui/material'
 
 function authReducer(state, action) {
   switch (action.type) {
@@ -142,32 +144,32 @@ function Authentification() {
     return (
       <div className="flex justify-center items-center h-screen">
         <form className="flex flex-col w-96 space-y-3">
-          <label className="font-bold" forhtml="username">
-            Identifiant
-          </label>
-          <input
+          <TextField
             id="username"
-            ref={inputName}
-            type="text"
+            inputRef={inputName}
             onChange={handleNameChange}
             value={username}
-            name="name"
-            placeholder="David"
+            name="username"
+            label="Identifiant"
+            variant="outlined"
+            helperText="David"
+            required
           />
-          <label className="font-bold" forhtml="password">
-            Mot de passe
-          </label>
-          <input
+          <TextField
             id="password"
+            label="Password"
             type="password"
             onChange={handlePasswordChange}
             value={password}
             name="password"
-            placeholder="1234"
+            variant="outlined"
+            helperText="1234"
+            required
           />
+
           <button
             onClick={checkID}
-            className="border border-green-600 text-white bg-green-600 p-2 rounded-md hover:bg-transparent hover:text-green-600"
+            className="border border-green-600 text-white bg-green-600 p-2 rounded-md hover:bg-transparent hover:text-green-600 transition"
             type="submit"
           >
             Entrer
@@ -195,7 +197,7 @@ function Authentification() {
             </div>
             <button
               onClick={clearLocalStorage}
-              className="border border-red-500 text-red-500 p-2 rounded-md hover:bg-red-500 hover:text-white"
+              className="border border-red-500 text-red-500 p-2 rounded-md hover:bg-red-500 hover:text-white transition"
             >
               Oubliez moi !
             </button>

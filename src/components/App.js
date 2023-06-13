@@ -15,7 +15,7 @@ function App() {
     <div className="container mx-auto">
       <button
         onClick={logOut}
-        className="absolute top-4 right-4 border border-red-600 text-red-600 p-2 rounded-md hover:bg-red-600 hover:text-white"
+        className="absolute top-4 right-4 border border-red-600 text-red-600 p-2 rounded-md hover:bg-red-600 hover:text-white transition"
       >
         Se déconnecter
       </button>

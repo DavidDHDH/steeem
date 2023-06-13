@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import useSearch from '../hooks/useSearch'
+import { TextField } from '@mui/material'
 
 function SearchBar() {
   const [search, setSearch] = useSearch()
@@ -14,14 +15,17 @@ function SearchBar() {
 
   return (
     <div className="flex justify-center border w-full">
-      <input
-        ref={inputRef}
+      <TextField
+        id="outlined-basic"
+        label="Quel jeu cherchez-vous ?"
+        variant="outlined"
+        inputRef={inputRef}
         type="text"
         onChange={handleChange}
         name="search"
         value={search}
-        placeholder="Rechercher ici"
-        className="text-center p-1 w-full h-9"
+        fullWidth
+        size="small"
       />
       <button onClick={resetSearch}>
         <svg
