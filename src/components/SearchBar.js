@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
+import useSearch from '../hooks/useSearch'
 
-function SearchBar({ search, setSearch }) {
+function SearchBar() {
+  const [search, setSearch] = useSearch()
   const inputRef = useRef(null)
   const handleChange = (e) => {
     setSearch(e.target.value)

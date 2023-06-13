@@ -4,28 +4,14 @@ import CleanCart from './CleanCart'
 import AddGame from './AddGameModal'
 import BtnAddGame from './BtnAddGame'
 
-function Cart({
-  cart,
-  setCart,
-  setGamesData,
-  gamesData,
-  isHidden,
-  setIsHidden,
-  setSearch,
-}) {
+function Cart({ cart, setCart, isHidden, setIsHidden }) {
   const totalCost =
     Math.round(cart.reduce((acc, val) => acc + val.price, 0) * 100) / 100
   return (
     <>
       <div className="col-span-1">
         <div className="sticky top-9 -ml-3">
-          <AddGame
-            setGamesData={setGamesData}
-            gamesData={gamesData}
-            isHidden={isHidden}
-            setIsHidden={setIsHidden}
-            setSearch={setSearch}
-          />
+          <AddGame isHidden={isHidden} setIsHidden={setIsHidden} />
           <h1 className=" text-3xl text-center my-7 max-xl:text-2xl max-lg:text-xl max-lg:my-4 ">
             Mon panier ({cart.length})
           </h1>
@@ -37,12 +23,7 @@ function Cart({
               {totalCost}€
             </p>
           </div>
-          <ValidateBtn
-            cart={cart}
-            setCart={setCart}
-            setGamesData={setGamesData}
-            gamesData={gamesData}
-          />
+          <ValidateBtn cart={cart} setCart={setCart} />
           <div className="mx-4">
             <BtnAddGame
               setIsHidden={setIsHidden}

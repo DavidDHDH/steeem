@@ -1,72 +1,14 @@
 import Header from '../components/Header'
 import Body from '../components/Body'
-import { useEffect, useState, useReducer, useContext } from 'react'
-import { optionsAllGames, urlAllGames } from './API'
+import { useContext } from 'react'
 import { LoggedContext } from './Authentification'
-
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
-const addValuesToJson = (games) => {
-  for (let game of games) {
-    game.price = getRandomIntInclusive(1, 69)
-    game.gotIt = false
-    game.note = getRandomIntInclusive(0, 20)
-  }
-}
-
-function reducer(state, action) {
-  switch (action.type) {
-    case 'FETCHING':
-      return { status: 'fetching', data: [], error: null }
-    case 'DONE':
-      return { status: 'done', data: action.payload, error: null }
-    case 'ADD_DATA':
-      return { status: 'updated', data: action.payload, error: null }
-    case 'FAIL':
-      return { status: 'fail', data: [], error: action.error }
-    default:
-      throw new Error('Action non supporté')
-  }
-}
+import GamesProvider from './GamesProvider'
+import SearchProvider from './SearchProvider'
 
 function App() {
-  const [search, setSearch] = useState('')
-  const [state, dispatch] = useReducer(reducer, {
-    status: 'idle',
-    data: [],
-    error: null,
-  })
-  const { status, data, error } = state
   const authDispatch = useContext(LoggedContext)
-  const setGamesData = (games) => dispatch({ type: 'ADD_DATA', payload: games })
-
   const logOut = () => {
     authDispatch({ type: 'LOG_OUT' })
-  }
-
-  useEffect(() => {
-    dispatch({ type: 'FETCHING' })
-    fetch(urlAllGames, optionsAllGames)
-      .then((response) => {
-        if (response.ok) {
-          return response.json()
-        }
-        return Promise.reject(response)
-      })
-      .then((data) => {
-        addValuesToJson(data)
-        dispatch({ type: 'DONE', payload: data })
-      })
-      .catch((error) => {
-        dispatch({ type: 'FAIL', error })
-      })
-  }, [])
-
-  if (error) {
-    throw new Error(error.status)
   }
 
   return (
@@ -77,16 +19,14 @@ function App() {
       >
         Se déconnecter
       </button>
-      <div className=" mt-32">
-        <Header search={search} setSearch={setSearch} />
-        <Body
-          search={search}
-          setSearch={setSearch}
-          gamesData={data}
-          setGamesData={setGamesData}
-          status={status}
-        />
-      </div>
+      <GamesProvider>
+        <SearchProvider>
+          <div className=" mt-32">
+            <Header />
+            <Body />
+          </div>
+        </SearchProvider>
+      </GamesProvider>
     </div>
   )
 }

@@ -1,15 +1,13 @@
 import GameCard from './GameCard'
 import SearchCard from './searchCard'
 import SkeletonCard from './skeletonCard'
+import useGames from '../hooks/useGames'
+import useSearch from '../hooks/useSearch'
 
-function GamesDisplay({
-  gamesData,
-  cart,
-  setCart,
-  search,
-  setIsHidden,
-  status,
-}) {
+function GamesDisplay({ cart, setCart, setIsHidden }) {
+  const [status, gamesData] = useGames()
+  const [search] = useSearch()
+
   const filteredGames = gamesData.filter((game) =>
     game.title.toLowerCase().includes(search.toLowerCase())
   )

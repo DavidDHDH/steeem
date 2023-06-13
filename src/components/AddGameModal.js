@@ -1,4 +1,6 @@
-import { useEffect, useState, useRef, useReducer } from 'react'
+import { useEffect, useRef, useReducer } from 'react'
+import useGames from '../hooks/useGames'
+import useSearch from '../hooks/useSearch'
 
 const initialState = { newTitle: '', newDescription: '', newImage: '' }
 const reducer = (state, action) => {
@@ -16,14 +18,10 @@ const reducer = (state, action) => {
   }
 }
 
-function AddGame({
-  setGamesData,
-  gamesData,
-  isHidden,
-  setIsHidden,
-  setSearch,
-}) {
+function AddGame({ isHidden, setIsHidden }) {
+  const [, setSearch] = useSearch()
   const titleInput = useRef()
+  const [, gamesData, setGamesData] = useGames()
 
   const [state, dispatch] = useReducer(reducer, initialState)
   const { newTitle, newDescription, newImage } = state

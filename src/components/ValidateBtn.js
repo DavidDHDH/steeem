@@ -1,4 +1,8 @@
-function ValidateBtn({ cart, setCart, setGamesData, gamesData }) {
+import useGames from '../hooks/useGames'
+
+function ValidateBtn({ cart, setCart }) {
+  const [, gamesData, setGamesData] = useGames()
+
   const handleClick = () => {
     console.log(cart)
     alert('Merci, TOUT DROIT SUR MON COMPTE !')
