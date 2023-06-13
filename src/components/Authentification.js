@@ -1,30 +1,70 @@
-import { createContext, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useReducer, createContext } from 'react'
 import users from '../assets/users.json'
 import App from './App'
 
+function authReducer(state, action) {
+  switch (action.type) {
+    case 'SET_USERNAME':
+      return { ...state, username: action.payload }
+    case 'SET_PASSWORD':
+      return { ...state, password: action.payload }
+    case 'SET_REMEMBER':
+      return { ...state, checkedRemember: action.payload }
+    case 'SET_STAYCONNECTED':
+      return { ...state, checkedStayConnected: action.payload }
+    case 'SET_ERROR':
+      return { ...state, error: action.error }
+    case 'LOG_IN':
+      return { ...state, loggedIn: action.payload }
+    default:
+      return new Error('Action non supporté')
+  }
+}
+
+const initialAuthState = {
+  loggedIn: false,
+  username: '',
+  password: '',
+  checkedRemember: false,
+  checkedStayConnected: false,
+  error: false,
+}
+
+export const LoggedContext = createContext()
+
 function Authentification() {
-  const [loggedIn, setLoggedIn] = useState(false)
-  const [error, setError] = useState(false)
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [checkedRemember, setCheckedRemember] = useState(false)
-  const [checkedStayConnected, setCheckedStayConnected] = useState(false)
   const inputName = useRef()
+  const [state, dispatch] = useReducer(authReducer, initialAuthState)
+  const {
+    loggedIn,
+    username,
+    password,
+    checkedRemember,
+    checkedStayConnected,
+    error,
+  } = state
 
   const checkLoggedIn = () => {
     if (localStorage.getItem('loggedIn')) {
-      setLoggedIn(true)
+      dispatch({ type: 'LOG_IN', payload: true })
     }
   }
   const handleNameChange = (e) => {
-    setUsername(e.target.value)
+    dispatch({ type: 'SET_USERNAME', payload: e.target.value })
   }
   const handlePasswordChange = (e) => {
-    setPassword(e.target.value)
+    dispatch({ type: 'SET_PASSWORD', payload: e.target.value })
   }
+  const handleChangeRemember = () => {
+    dispatch({ type: 'SET_REMEMBER', payload: !checkedRemember })
+  }
+  const handleChangeStay = () => {
+    dispatch({ type: 'SET_STAYCONNECTED', payload: !checkedStayConnected })
+  }
+
   const checkID = (e) => {
     e.preventDefault()
-    setError(false)
+    dispatch({ type: 'SET_ERROR', error: false })
     let found = false
     for (const user of users) {
       if (username === user.name && password === user.password) {
@@ -33,7 +73,7 @@ function Authentification() {
       }
     }
     if (found) {
-      setLoggedIn(true)
+      dispatch({ type: 'LOG_IN', payload: true })
       if (checkedRemember) {
         localStorage.setItem('name', username)
         localStorage.setItem('password', password)
@@ -42,9 +82,9 @@ function Authentification() {
         }
       }
     } else {
-      setError(true)
-      setUsername('')
-      setPassword('')
+      dispatch({ type: 'SET_ERROR', error: true })
+      dispatch({ type: 'SET_USERNAME', payload: '' })
+      dispatch({ type: 'SET_PASSWORD', payload: '' })
     }
   }
   const clearLocalStorage = (e) => {
@@ -52,39 +92,40 @@ function Authentification() {
     localStorage.removeItem('name')
     localStorage.removeItem('password')
     localStorage.removeItem('loggedIn')
-    setUsername('')
-    setPassword('')
-    setCheckedRemember(false)
-    setCheckedStayConnected(false)
-  }
-  const handleChangeRemember = () => {
-    setCheckedRemember(!checkedRemember)
-  }
-  const handleChangeStay = () => {
-    setCheckedStayConnected(!checkedStayConnected)
+    dispatch({ type: 'SET_USERNAME', payload: '' })
+    dispatch({ type: 'SET_PASSWORD', payload: '' })
+    dispatch({ type: 'SET_REMEMBER', payload: false })
+    dispatch({ type: 'SET_STAYCONNECTED', payload: false })
   }
 
   useEffect(() => {
     inputName.current.focus()
     checkLoggedIn()
     if (localStorage.getItem('name') && localStorage.getItem('password')) {
-      setUsername(localStorage.getItem('name'))
-      setPassword(localStorage.getItem('password'))
-      setCheckedRemember(true)
+      dispatch({ type: 'SET_USERNAME', payload: localStorage.getItem('name') })
+      dispatch({
+        type: 'SET_PASSWORD',
+        payload: localStorage.getItem('password'),
+      })
+      dispatch({ type: 'SET_REMEMBER', payload: true })
     }
   }, [])
 
   if (loggedIn) {
     return (
       <>
-        <App setLoggedIn={setLoggedIn} />
+        <LoggedContext.Provider value={dispatch}>
+          <App />
+        </LoggedContext.Provider>
       </>
     )
   } else {
     return (
       <div className="flex justify-center items-center h-screen">
         <form className="flex flex-col w-96 space-y-3">
-          <label forhtml="username">Identifiant</label>
+          <label className="font-bold" forhtml="username">
+            Identifiant
+          </label>
           <input
             id="username"
             ref={inputName}
@@ -94,7 +135,9 @@ function Authentification() {
             name="name"
             placeholder="David"
           />
-          <label forhtml="password">Mot de passe</label>
+          <label className="font-bold" forhtml="password">
+            Mot de passe
+          </label>
           <input
             id="password"
             type="password"
@@ -105,14 +148,14 @@ function Authentification() {
           />
           <button
             onClick={checkID}
-            className="border border-black"
+            className="border border-green-600 text-white bg-green-600 p-2 rounded-md hover:bg-transparent hover:text-green-600"
             type="submit"
           >
             Entrer
           </button>
-          <div className="flex justify-around">
+          <div className="flex justify-between">
             <div className="flex flex-col">
-              <div className=" space-x-2">
+              <div className="space-x-2">
                 <input
                   id="remember"
                   type="checkbox"
@@ -133,7 +176,7 @@ function Authentification() {
             </div>
             <button
               onClick={clearLocalStorage}
-              className="border border-black px-2"
+              className="border border-red-500 text-red-500 p-2 rounded-md hover:bg-red-500 hover:text-white"
             >
               Oubliez moi !
             </button>

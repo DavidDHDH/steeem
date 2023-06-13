@@ -10,7 +10,6 @@ function Body({ ...props }) {
     <div className="bg-gray-100 bg-opacity-70 grid grid-cols-4 border rounded-md max-sm:grid-cols-2">
       <GamesDisplay
         gamesData={props.gamesData}
-        setGamesData={props.setGamesData}
         search={props.search}
         cart={cart}
         setCart={setCart}

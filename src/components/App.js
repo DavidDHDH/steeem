@@ -1,14 +1,15 @@
 import Header from '../components/Header'
 import Body from '../components/Body'
-import { useEffect, useState, useReducer } from 'react'
+import { useEffect, useState, useReducer, useContext } from 'react'
 import { optionsAllGames, urlAllGames } from './API'
+import { LoggedContext } from './Authentification'
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min)
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
-const newJson = (games) => {
+const addValuesToJson = (games) => {
   for (let game of games) {
     game.price = getRandomIntInclusive(1, 69)
     game.gotIt = false
@@ -18,45 +19,55 @@ const newJson = (games) => {
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'fetching':
-      return { status: 'fetching', data: null, error: null }
-    case 'done':
+    case 'FETCHING':
+      return { status: 'fetching', data: [], error: null }
+    case 'DONE':
       return { status: 'done', data: action.payload, error: null }
-    case 'fail':
-      return { status: 'fail', data: null, error: action.error }
+    case 'ADD_DATA':
+      return { status: 'updated', data: action.payload, error: null }
+    case 'FAIL':
+      return { status: 'fail', data: [], error: action.error }
     default:
       throw new Error('Action non supporté')
   }
 }
 
-function App({ setLoggedIn }) {
+function App() {
   const [search, setSearch] = useState('')
-  const [gamesData, setGamesData] = useState([])
   const [state, dispatch] = useReducer(reducer, {
     status: 'idle',
-    data: null,
+    data: [],
     error: null,
   })
   const { status, data, error } = state
+  const authDispatch = useContext(LoggedContext)
 
   const logOut = () => {
-    setLoggedIn(false)
+    authDispatch({ type: 'LOG_IN', payload: false })
   }
 
   useEffect(() => {
-    dispatch({ type: 'fetching' })
+    dispatch({ type: 'FETCHING' })
     fetch(urlAllGames, optionsAllGames)
-      .then((r) => r.json())
-      .then((json) => {
-        newJson(json)
-        dispatch({ type: 'done' })
-        setGamesData(json)
+      .then((response) => {
+        if (response.ok) {
+          return response.json()
+        }
+        return Promise.reject(response)
       })
-      .catch((error) => dispatch({ type: 'fail', payload: error }))
+      .then((data) => {
+        addValuesToJson(data)
+        dispatch({ type: 'DONE', payload: data })
+      })
+      .catch((error) => {
+        dispatch({ type: 'FAIL', error })
+      })
   }, [])
 
+  const setGamesData = (game) => dispatch({ type: 'ADD_DATA', payload: game })
+
   if (error) {
-    throw error
+    throw new Error('Il y a un problème ' + error.status)
   }
 
   return (
@@ -72,7 +83,7 @@ function App({ setLoggedIn }) {
         <Body
           search={search}
           setSearch={setSearch}
-          gamesData={gamesData}
+          gamesData={data}
           setGamesData={setGamesData}
           status={status}
         />
