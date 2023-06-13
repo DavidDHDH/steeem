@@ -1,7 +1,7 @@
 import Header from '../components/Header'
 import Body from '../components/Body'
 import { useEffect, useState, useReducer } from 'react'
-import { rapidAPIhost, rapidAPIkey } from './config'
+import { optionsAllGames, urlAllGames } from './API'
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min)
@@ -29,16 +29,7 @@ function reducer(state, action) {
   }
 }
 
-const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games'
-const options = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': rapidAPIkey,
-    'X-RapidAPI-Host': rapidAPIhost,
-  },
-}
-
-function App() {
+function App({ setLoggedIn }) {
   const [search, setSearch] = useState('')
   const [gamesData, setGamesData] = useState([])
   const [state, dispatch] = useReducer(reducer, {
@@ -47,15 +38,17 @@ function App() {
     error: null,
   })
   const { status, data, error } = state
-  console.log(status)
+
+  const logOut = () => {
+    setLoggedIn(false)
+  }
 
   useEffect(() => {
     dispatch({ type: 'fetching' })
-    fetch(url, options)
+    fetch(urlAllGames, optionsAllGames)
       .then((r) => r.json())
       .then((json) => {
         newJson(json)
-        console.log(json)
         dispatch({ type: 'done' })
         setGamesData(json)
       })
@@ -67,15 +60,23 @@ function App() {
   }
 
   return (
-    <div className="container mx-auto mt-32">
-      <Header search={search} setSearch={setSearch} />
-      <Body
-        search={search}
-        setSearch={setSearch}
-        gamesData={gamesData}
-        setGamesData={setGamesData}
-        status={status}
-      />
+    <div className="container mx-auto">
+      <button
+        onClick={logOut}
+        className="absolute top-4 right-4 border border-red-600 text-red-600 p-2 rounded-md hover:bg-red-600 hover:text-white"
+      >
+        Se déconnecter
+      </button>
+      <div className=" mt-32">
+        <Header search={search} setSearch={setSearch} />
+        <Body
+          search={search}
+          setSearch={setSearch}
+          gamesData={gamesData}
+          setGamesData={setGamesData}
+          status={status}
+        />
+      </div>
     </div>
   )
 }
