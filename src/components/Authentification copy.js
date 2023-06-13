@@ -64,9 +64,6 @@ function Authentification() {
   }
   const handleChangeStay = () => {
     dispatch({ type: 'SET_STAYCONNECTED', payload: !checkedStayConnected })
-    if (localStorage.getItem('loggedIn')) {
-      localStorage.removeItem('loggedIn')
-    }
   }
 
   const checkID = (e) => {
@@ -111,24 +108,7 @@ function Authentification() {
       })
       dispatch({ type: 'SET_REMEMBER', payload: true })
     }
-    if (localStorage.getItem('loggedIn')) {
-      dispatch({ type: 'SET_STAYCONNECTED', payload: true })
-    }
   }, [])
-
-  useEffect(() => {
-    if (
-      !loggedIn &&
-      localStorage.getItem('name') &&
-      localStorage.getItem('password')
-    ) {
-      dispatch({ type: 'SET_USERNAME', payload: localStorage.getItem('name') })
-      dispatch({
-        type: 'SET_PASSWORD',
-        payload: localStorage.getItem('password'),
-      })
-    }
-  }, [loggedIn])
 
   if (loggedIn) {
     return (

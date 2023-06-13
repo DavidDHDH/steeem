@@ -43,7 +43,7 @@ function App() {
   const authDispatch = useContext(LoggedContext)
 
   const logOut = () => {
-    authDispatch({ type: 'LOG_IN', payload: false })
+    authDispatch({ type: 'LOG_OUT' })
   }
 
   useEffect(() => {

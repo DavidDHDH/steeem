@@ -1,4 +1,20 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useReducer } from 'react'
+
+const initialState = { newTitle: '', newDescription: '', newImage: '' }
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'SET_TITLE':
+      return { ...state, newTitle: action.payload }
+    case 'SET_DESCRIPTION':
+      return { ...state, newDescription: action.payload }
+    case 'SET_IMAGE':
+      return { ...state, newImage: action.payload }
+    case 'CLEAR':
+      return initialState
+    default:
+      throw new Error('Action non supportée')
+  }
+}
 
 function AddGame({
   setGamesData,
@@ -7,21 +23,24 @@ function AddGame({
   setIsHidden,
   setSearch,
 }) {
-  const [newTitle, setNewTitle] = useState('')
-  const [newDescription, setnewDescription] = useState('')
-  const [newImage, setnewImage] = useState('')
+  // const [newTitle, setNewTitle] = useState('')
+  // const [newDescription, setnewDescription] = useState('')
+  // const [newImage, setnewImage] = useState('')
   const titleInput = useRef()
+
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const { newTitle, newDescription, newImage } = state
 
   const handleClick = () => setIsHidden(true)
 
   const handleChangeTitle = (e) => {
-    setNewTitle(e.target.value)
+    dispatch({ type: 'SET_TITLE', payload: e.target.value })
   }
   const handleChangeDescription = (e) => {
-    setnewDescription(e.target.value)
+    dispatch({ type: 'SET_DESCRIPTION', payload: e.target.value })
   }
   const handleChangeImage = (e) => {
-    setnewImage(e.target.value)
+    dispatch({ type: 'SET_IMAGE', payload: e.target.value })
   }
   const onSubmit = (e) => {
     e.preventDefault()
@@ -32,16 +51,14 @@ function AddGame({
       short_description: newDescription,
       gotIt: true,
     }
-    setNewTitle('')
-    setnewDescription('')
-    setnewImage('')
+    dispatch({ type: 'CLEAR' })
     setGamesData([newGame, ...gamesData])
     setSearch('')
   }
 
   useEffect(() => {
     titleInput.current.focus()
-  })
+  }, [])
 
   return (
     <div className="my-10" hidden={isHidden}>
