@@ -1,5 +1,5 @@
-import { useReducer, useEffect, createContext } from 'react'
-import { optionsAllGames, urlAllGames } from './API'
+import { useReducer, useEffect, createContext, useState } from 'react'
+import { optionsGames, urlGames } from './API'
 
 export const GamesContext = createContext()
 
@@ -38,11 +38,13 @@ function GamesProvider(props) {
     error: null,
   })
   const { status, data: gamesData, error } = state
+  const [filteredCatBy, setFilteredCatBy] = useState('')
+  const [filteredPlatBy, setFilteredPlatBy] = useState('')
   const setGamesData = (games) => dispatch({ type: 'ADD_DATA', payload: games })
 
   useEffect(() => {
     dispatch({ type: 'FETCHING' })
-    fetch(urlAllGames, optionsAllGames)
+    fetch(urlGames, optionsGames)
       .then((response) => {
         if (response.ok) {
           return response.json()
@@ -62,7 +64,15 @@ function GamesProvider(props) {
     throw new Error(error.status)
   }
 
-  const value = [status, gamesData, setGamesData]
+  const value = [
+    status,
+    gamesData,
+    setGamesData,
+    filteredCatBy,
+    setFilteredCatBy,
+    filteredPlatBy,
+    setFilteredPlatBy,
+  ]
 
   return <GamesContext.Provider value={value} {...props} />
 }

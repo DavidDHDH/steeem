@@ -142,7 +142,7 @@ function Authentification() {
     )
   } else {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex flex-col justify-center items-center h-screen">
         <form className="flex flex-col w-96 space-y-3">
           <TextField
             id="username"
@@ -206,6 +206,20 @@ function Authentification() {
             {error ? 'Identification impossible' : null}
           </div>
         </form>
+        <div className="mt-10">
+          <p className="text-center text-gray-500">
+            Données provenant de l'API{' '}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.freetogame.com/"
+            >
+              https://www.freetogame.com/
+            </a>{' '}
+            <br />
+            Notes et prix générés de manières aléatoires.
+          </p>
+        </div>
       </div>
     )
   }
