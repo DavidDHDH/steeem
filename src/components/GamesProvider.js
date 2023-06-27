@@ -1,5 +1,6 @@
 import { useReducer, useEffect, createContext, useState } from 'react'
 import { optionsGames, urlGames } from './API'
+import ErrorDisplay from './errorDisplay'
 
 export const GamesContext = createContext()
 
@@ -61,7 +62,7 @@ function GamesProvider(props) {
   }, [])
 
   if (error) {
-    throw new Error(error.status)
+    return <ErrorDisplay error={error} />
   }
 
   const value = [

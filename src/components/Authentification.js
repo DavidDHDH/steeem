@@ -2,7 +2,7 @@ import { useEffect, useRef, useReducer, createContext } from 'react'
 
 import users from '../assets/users.json'
 import App from './App'
-import { TextField, Box } from '@mui/material'
+import { TextField } from '@mui/material'
 
 function authReducer(state, action) {
   switch (action.type) {
