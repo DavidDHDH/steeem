@@ -1,6 +1,5 @@
-import { Button, ButtonGroup } from '@mui/material'
+import { Autocomplete, Button, ButtonGroup } from '@mui/material'
 import useGames from '../hooks/useGames'
-import SplitButton from './FilterDropdown'
 
 function FiltersBar() {
   const [, gamesData, , , setFilteredCatBy, , setFilteredPlatBy] = useGames()

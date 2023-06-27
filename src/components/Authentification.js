@@ -70,6 +70,13 @@ function Authentification() {
       localStorage.removeItem('loggedIn')
     }
   }
+  const clearLocalStorage = (e) => {
+    e.preventDefault()
+    localStorage.removeItem('name')
+    localStorage.removeItem('password')
+    localStorage.removeItem('loggedIn')
+    dispatch({ type: 'CLEAR' })
+  }
 
   const checkID = (e) => {
     e.preventDefault()
@@ -93,13 +100,6 @@ function Authentification() {
     } else {
       dispatch({ type: 'SET_ERROR', error: true })
     }
-  }
-  const clearLocalStorage = (e) => {
-    e.preventDefault()
-    localStorage.removeItem('name')
-    localStorage.removeItem('password')
-    localStorage.removeItem('loggedIn')
-    dispatch({ type: 'CLEAR' })
   }
 
   useEffect(() => {

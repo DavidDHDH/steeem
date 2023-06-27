@@ -16,7 +16,6 @@ function GamesDisplay({ cart, setCart, setIsHidden }) {
       game.platform.toLowerCase().includes(filteredPlatBy.toLowerCase())
     )
   })
-  console.log(search)
 
   if (status === 'fetching') {
     return (

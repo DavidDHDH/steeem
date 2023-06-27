@@ -7,11 +7,11 @@ import ErrorDisplay from './components/errorDisplay'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <React.StrictMode>
-    <ErrorBoundary key={Math.random()} FallbackComponent={ErrorDisplay}>
-      <Authentification />
-    </ErrorBoundary>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <ErrorBoundary key={Math.random()} FallbackComponent={ErrorDisplay}>
+    <Authentification />
+  </ErrorBoundary>
+  // </React.StrictMode>
 )
 
 // If you want to start measuring performance in your app, pass a function
