@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import { SearchContext } from '../components/SearchProvider'
+import { SearchContext } from '../context/SearchProvider'
 
 function useSearch() {
   const context = useContext(SearchContext)
   if (!context) {
-    throw new Error('useGames doit etre utilisé dans le GamesProvider')
+    throw new Error('useSearch doit etre utilisé dans le SearchProvider')
   }
   return context
 }

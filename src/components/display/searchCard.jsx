@@ -1,5 +1,5 @@
-import image404 from '../assets/images/erreur-404-pas-trouve-effet-pepin_8024-4.avif'
-import BtnAddGame from './BtnAddGame'
+import BtnAddGame from '../core/BtnAddGame'
+import image404 from '../../assets/images/erreur-404-pas-trouve-effet-pepin_8024-4.avif'
 
 function SearchCard({ setIsHidden }) {
   return (

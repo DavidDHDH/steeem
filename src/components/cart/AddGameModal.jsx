@@ -1,6 +1,6 @@
 import { useEffect, useRef, useReducer } from 'react'
-import useGames from '../hooks/useGames'
-import useSearch from '../hooks/useSearch'
+import useGames from '../../hooks/useGames'
+import useSearch from '../../hooks/useSearch'
 
 const initialState = { newTitle: '', newDescription: '', newImage: '' }
 const reducer = (state, action) => {

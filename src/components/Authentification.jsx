@@ -1,6 +1,6 @@
 import { useEffect, useRef, useReducer, createContext } from 'react'
 
-import users from '../assets/users.json'
+import users from '../datas/users.json'
 import App from './App'
 import { TextField } from '@mui/material'
 

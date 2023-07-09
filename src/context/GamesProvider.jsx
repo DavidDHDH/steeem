@@ -1,6 +1,6 @@
 import { useReducer, useEffect, createContext, useState } from 'react'
-import { optionsGames, urlGames } from './API'
-import ErrorDisplay from './errorDisplay'
+import { gameApi } from '../datas/API'
+import ErrorDisplay from '../components/errorDisplay'
 
 export const GamesContext = createContext()
 
@@ -9,7 +9,7 @@ function getRandomIntInclusive(min, max) {
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
-const addValuesToJson = (games) => {
+export const addValuesToJson = (games) => {
   for (let game of games) {
     game.price = getRandomIntInclusive(1, 69)
     game.gotIt = false
@@ -45,7 +45,7 @@ function GamesProvider(props) {
 
   useEffect(() => {
     dispatch({ type: 'FETCHING' })
-    fetch(urlGames, optionsGames)
+    fetch(gameApi.url, gameApi.options)
       .then((response) => {
         if (response.ok) {
           return response.json()

@@ -1,8 +1,8 @@
 import CartList from './CartList'
 import ValidateBtn from './ValidateBtn'
-import CleanCart from './CleanCart'
 import AddGame from './AddGameModal'
-import BtnAddGame from './BtnAddGame'
+import BtnAddGame from '../core/BtnAddGame'
+import CleanCart from './CleanCart'
 
 function Cart({ cart, setCart, isHidden, setIsHidden }) {
   const totalCost =

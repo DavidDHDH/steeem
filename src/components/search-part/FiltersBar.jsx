@@ -1,5 +1,5 @@
-import { Autocomplete, Button, ButtonGroup } from '@mui/material'
-import useGames from '../hooks/useGames'
+import { Button, ButtonGroup } from '@mui/material'
+import useGames from '../../hooks/useGames'
 
 function FiltersBar() {
   const [, gamesData, , , setFilteredCatBy, , setFilteredPlatBy] = useGames()

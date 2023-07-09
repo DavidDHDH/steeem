@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import useSearch from '../hooks/useSearch'
+import useSearch from '../../hooks/useSearch'
 import { TextField } from '@mui/material'
 
 function SearchBar() {

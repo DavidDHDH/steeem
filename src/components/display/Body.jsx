@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Cart from './Cart'
+import Cart from '../cart/Cart'
 import GamesDisplay from './GamesDisplay'
 
 function Body() {

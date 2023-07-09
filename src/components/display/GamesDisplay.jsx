@@ -1,8 +1,8 @@
-import GameCard from './GameCard'
 import SearchCard from './searchCard'
 import SkeletonCard from './skeletonCard'
-import useGames from '../hooks/useGames'
-import useSearch from '../hooks/useSearch'
+import useGames from '../../hooks/useGames'
+import useSearch from '../../hooks/useSearch'
+import GameCard from './GameCard'
 
 function GamesDisplay({ cart, setCart, setIsHidden }) {
   const [status, gamesData, , filteredCatBy, , filteredPlatBy] = useGames()

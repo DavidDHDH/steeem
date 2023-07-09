@@ -1,9 +1,9 @@
-import Header from '../components/Header'
-import Body from '../components/Body'
+import Header from './search-part/Header'
+import Body from './display/Body'
 import { useContext } from 'react'
 import { LoggedContext } from './Authentification'
-import GamesProvider from './GamesProvider'
-import SearchProvider from './SearchProvider'
+import GamesProvider from '../context/GamesProvider'
+import SearchProvider from '../context/SearchProvider'
 
 function App() {
   const authDispatch = useContext(LoggedContext)

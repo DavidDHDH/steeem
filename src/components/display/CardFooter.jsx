@@ -1,4 +1,4 @@
-import AddToCartButton from './AddToCartButton'
+import AddToCartButton from '../cart/AddToCartButton'
 import Notation from './Notation'
 
 function CardFooter({ ...props }) {

@@ -7,9 +7,9 @@ import ErrorDisplay from './components/errorDisplay'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  // <React.StrictMode>
-  <Authentification />
-  // </React.StrictMode>
+  <React.StrictMode>
+    <Authentification />
+  </React.StrictMode>
 )
 
 // If you want to start measuring performance in your app, pass a function
