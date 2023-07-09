@@ -1,5 +1,10 @@
 First challenge to finish the first React module from React Mastery (Mike Codeur), using useState. Fake 10 videogames' list in the file.
 
+v2 final :
+
+- kind of authentification with localstorage
+- new select filters
+
 v1 final :
 
 - search to filter display
