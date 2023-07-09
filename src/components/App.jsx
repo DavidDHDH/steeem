@@ -1,5 +1,5 @@
 import Header from './search-part/Header'
-import Body from './display/Body'
+import Body from './Body'
 import { useContext } from 'react'
 import { LoggedContext } from './Authentification'
 import GamesProvider from '../context/GamesProvider'

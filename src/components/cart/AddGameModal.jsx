@@ -3,6 +3,7 @@ import useGames from '../../hooks/useGames'
 import useSearch from '../../hooks/useSearch'
 
 const initialState = { newTitle: '', newDescription: '', newImage: '' }
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_TITLE':

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Cart from '../cart/Cart'
-import GamesDisplay from './GamesDisplay'
+import Cart from './cart/Cart'
+import GamesDisplay from './display/GamesDisplay'
 
 function Body() {
   const [cart, setCart] = useState([])
