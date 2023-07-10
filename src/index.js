@@ -4,11 +4,12 @@ import './styles/index.css'
 import { ErrorBoundary } from 'react-error-boundary'
 import Authentification from './components/Authentification'
 import ErrorDisplay from './components/errorDisplay'
+import App from './components/App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <Authentification />
+    <App />
   </React.StrictMode>
 )
 

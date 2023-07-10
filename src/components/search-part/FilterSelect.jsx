@@ -45,7 +45,7 @@ export default function FiltersSelect({
             </MenuItem>
           ))}
         </Select>
-        <FormHelperText>Filtrer par plateforme</FormHelperText>
+        <FormHelperText>Filtrer par catégorie</FormHelperText>
       </FormControl>
       <FormControl sx={{ m: 1, minWidth: 200 }}>
         <InputLabel id="platform">Platforme</InputLabel>

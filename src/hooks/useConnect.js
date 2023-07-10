@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect } from 'react'
+import { useReducer, useEffect } from 'react'
 import users from '../datas/users.json'
 
 function authReducer(state, action) {
@@ -12,7 +12,7 @@ function authReducer(state, action) {
     case 'SET_STAYCONNECTED':
       return { ...state, checkedStayConnected: action.payload }
     case 'SET_ERROR':
-      return { ...state, username: '', password: '', error: action.error }
+      return { ...state, password: '', error: action.error }
     case 'LOG_IN':
       return { ...state, loggedIn: action.payload }
     case 'LOG_OUT':
