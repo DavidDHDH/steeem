@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/steeem/static/css/main.16f25a40.css",
-    "main.js": "/steeem/static/js/main.c386a351.js",
+    "main.js": "/steeem/static/js/main.fb09bf0a.js",
     "static/media/v748-toon-111.jpg": "/steeem/static/media/v748-toon-111.a49ed7d7564b1870f5bf.jpg",
     "static/media/erreur-404-pas-trouve-effet-pepin_8024-4.avif": "/steeem/static/media/erreur-404-pas-trouve-effet-pepin_8024-4.94dbe8642b83aa5ae0d8.avif",
     "index.html": "/steeem/index.html",
     "main.16f25a40.css.map": "/steeem/static/css/main.16f25a40.css.map",
-    "main.c386a351.js.map": "/steeem/static/js/main.c386a351.js.map"
+    "main.fb09bf0a.js.map": "/steeem/static/js/main.fb09bf0a.js.map"
   },
   "entrypoints": [
     "static/css/main.16f25a40.css",
-    "static/js/main.c386a351.js"
+    "static/js/main.fb09bf0a.js"
   ]
 }
