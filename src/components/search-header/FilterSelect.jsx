@@ -4,25 +4,28 @@ import MenuItem from '@mui/material/MenuItem'
 import FormHelperText from '@mui/material/FormHelperText'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
+import useGames from '../../hooks/useGames'
 
-export default function FiltersSelect({
-  categories,
-  platforms,
-  handleChanges,
-}) {
+export default function FiltersSelect() {
+  const {
+    gamesCategories,
+    gamesPlatforms,
+    setFilteredCatBy,
+    setFilteredPlatBy,
+  } = useGames()
   const [activeFilter, setActiveFilter] = React.useState({
-    categorie: '',
-    plateforme: '',
+    category: '',
+    plateform: '',
   })
 
   const handleCatChange = (event) => {
-    setActiveFilter({ ...activeFilter, categorie: event.target.value })
-    handleChanges.categorie(event.target.value)
+    setActiveFilter({ ...activeFilter, category: event.target.value })
+    setFilteredCatBy(event.target.value)
   }
 
   const handlePlatChange = (event) => {
-    setActiveFilter({ ...activeFilter, plateforme: event.target.value })
-    handleChanges.plateforme(event.target.value)
+    setActiveFilter({ ...activeFilter, plateform: event.target.value })
+    setFilteredPlatBy(event.target.value)
   }
 
   return (
@@ -32,14 +35,14 @@ export default function FiltersSelect({
         <Select
           labelId="categories"
           id="categories"
-          value={activeFilter.categorie}
+          value={activeFilter.category}
           label="categoriesFilter"
           onChange={handleCatChange}
         >
           <MenuItem value="">
             <em>All</em>
           </MenuItem>
-          {categories.map((filter) => (
+          {gamesCategories.map((filter) => (
             <MenuItem value={filter} key={filter}>
               {filter}
             </MenuItem>
@@ -52,14 +55,14 @@ export default function FiltersSelect({
         <Select
           labelId="platform"
           id="platform"
-          value={activeFilter.plateforme}
+          value={activeFilter.plateform}
           label="platformFilter"
           onChange={handlePlatChange}
         >
           <MenuItem value="">
             <em>All</em>
           </MenuItem>
-          {platforms.map((filter) => (
+          {gamesPlatforms.map((filter) => (
             <MenuItem value={filter} key={filter}>
               {filter}
             </MenuItem>

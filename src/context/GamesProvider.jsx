@@ -1,35 +1,45 @@
-import { useReducer, useEffect, createContext, useState } from 'react'
-import { gameApi } from '../datas/API'
+import { createContext, useEffect, useState } from 'react'
 import ErrorDisplay from '../components/errorDisplay'
-import { fetchGames } from '../datas/API'
+import { fakeGames, fetchGames } from '../datas/API'
 import { useQuery } from '@tanstack/react-query'
+import useSearch from '../hooks/useSearch'
 
 export const GamesContext = createContext()
 
-function getRandomNumber(min, max) {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
-export const addValuesToJson = (games) => {
-  for (let game of games) {
-    game.price = getRandomNumber(1, 69)
-    game.gotIt = false
-    game.note = getRandomNumber(0, 20)
-  }
-}
-
 function GamesProvider(props) {
+  const [search] = useSearch()
   const [filteredCatBy, setFilteredCatBy] = useState('')
   const [filteredPlatBy, setFilteredPlatBy] = useState('')
-  // const setGamesData = (games) => dispatch({ type: 'ADD_DATA', payload: games })
 
   const {
     isLoading,
     isSuccess,
     error,
-    data: gamesData,
+    data: originalGames,
   } = useQuery(['games'], fetchGames)
+
+  const [gamesData, setGamesData] = useState(originalGames)
+
+  useEffect(() => {
+    setGamesData(filteredGames)
+  }, [search, filteredCatBy, filteredPlatBy, originalGames])
+
+  const gamesCategories = originalGames
+    ? [...new Set(originalGames.map((game) => game.genre))]
+    : []
+  const gamesPlatforms = originalGames
+    ? [...new Set(originalGames.map((game) => game.platform))]
+    : []
+
+  const filteredGames = originalGames
+    ? originalGames.filter((game) => {
+        return (
+          game.title.toLowerCase().includes(search.toLowerCase()) &&
+          game.genre.includes(filteredCatBy) &&
+          game.platform.includes(filteredPlatBy)
+        )
+      })
+    : []
 
   if (error) {
     return <ErrorDisplay error={error} />
@@ -39,8 +49,11 @@ function GamesProvider(props) {
     isLoading,
     isSuccess,
     gamesData,
+    setGamesData,
+    gamesCategories,
     filteredCatBy,
     setFilteredCatBy,
+    gamesPlatforms,
     filteredPlatBy,
     setFilteredPlatBy,
   }

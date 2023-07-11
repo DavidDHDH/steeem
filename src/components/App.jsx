@@ -4,6 +4,7 @@ import Authentification from './Authentification'
 import GamesProvider from '../context/GamesProvider'
 import SearchProvider from '../context/SearchProvider'
 import { useState } from 'react'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -13,14 +14,16 @@ function App() {
   if (loggedIn) {
     return (
       <div className="container mx-auto">
-        <GamesProvider>
-          <SearchProvider>
+        <SearchProvider>
+          <GamesProvider>
             <div className=" mt-32">
               <Header handleLog={handleLog} />
               <Body />
             </div>
-          </SearchProvider>
-        </GamesProvider>
+          </GamesProvider>
+        </SearchProvider>
+
+        <ReactQueryDevtools />
       </div>
     )
   } else {
