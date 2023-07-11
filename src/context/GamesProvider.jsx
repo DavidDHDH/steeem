@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import ErrorDisplay from '../components/errorDisplay'
-import { fakeGames, fetchGames } from '../datas/API'
+import { fetchGames } from '../datas/API'
 import { useQuery } from '@tanstack/react-query'
 import useSearch from '../hooks/useSearch'
 
@@ -16,7 +16,10 @@ function GamesProvider(props) {
     isSuccess,
     error,
     data: originalGames,
-  } = useQuery(['games'], fetchGames)
+  } = useQuery(['games'], fetchGames, {
+    staleTime: 55 * (60 * 1000),
+    cacheTime: 60 * (60 * 1000),
+  })
 
   const [gamesData, setGamesData] = useState(originalGames)
 

@@ -1,7 +1,6 @@
 import SearchCard from './searchCard'
 import SkeletonCard from './skeletonCard'
 import useGames from '../../hooks/useGames'
-import useSearch from '../../hooks/useSearch'
 import GameCard from './GameCard'
 
 function GamesDisplay({ cart, setCart, setIsHidden }) {
