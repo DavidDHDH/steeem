@@ -5,7 +5,7 @@ function ErrorDisplay({ error }) {
     <div role="alert" className="m-20">
       <Alert severity="error">
         <AlertTitle>Erreur</AlertTitle>
-        Il y a eu un problème. Détails : {error.status} —{' '}
+        Il y a eu un problème. Détails : {error.message} —{' '}
         <strong>Veuillez réesayer</strong>
       </Alert>
     </div>

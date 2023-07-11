@@ -1,6 +1,5 @@
-import Header from './search-part/Header'
+import Header from './search-header/Header'
 import Body from './Body'
-
 import Authentification from './Authentification'
 import GamesProvider from '../context/GamesProvider'
 import SearchProvider from '../context/SearchProvider'

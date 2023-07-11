@@ -1,9 +1,8 @@
-import { Button, ButtonGroup } from '@mui/material'
 import useGames from '../../hooks/useGames'
 import FiltersSelect from './FilterSelect'
 
 function FiltersBar() {
-  const [, gamesData, , , setFilteredCatBy, , setFilteredPlatBy] = useGames()
+  const { gamesData = [], setFilteredCatBy, setFilteredPlatBy } = useGames()
   const filtersCategory = [...new Set(gamesData.map((game) => game.genre))]
   const filtersPlatform = [...new Set(gamesData.map((game) => game.platform))]
 
