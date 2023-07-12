@@ -1,23 +1,29 @@
-First challenge to finish the first React module from React Mastery (Mike Codeur), using useState. Fake 10 videogames' list in the file.
+Projet d'entrainement de la formation React Mastery (Mike Codeur) : catalogue de jeu video avec fonction d'achat et de notation.
+
+### Structure de base de l'application v1
+
+![Alt text](src/assets/images/Desktop.png)
 
 v2 final :
 
-- kind of authentification with localstorage
-- new select filters
+- fake authentification avec utilisation du localStorage
+- possibilité d'ajout un jeu vidéo manuellement à la liste (automatiquement en ma possession)
+- nouvelle présentation des filtres sous formes de selects.
+- utilisation de React Query pour les requetes HTTP.
 
 v1 final :
 
-- search to filter display
-- add to cart
-- clean cart
-- note a video game in my possession
-- add a video game in the list
-- responsive design (not perfect)
+- possibiilité de chercher un jeu dans le catalogue
+- ajout au panier
+- simulation achat
+- vider mon panier
+- noter un jeu vidéo en ma possession
+- responsive design
 
-Not working yet in v1 :
+Non fonctionnel v1:
 
-- search bar blue filters
-- games money does not arrive on my bank account
+- filtres par catégorie et genre
+- l'argent n'arrive pas sur mon compte en banque
 
 # Getting Started with Create React App
 
