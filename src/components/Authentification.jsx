@@ -1,4 +1,4 @@
-import { useRef, useReducer, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import { TextField } from '@mui/material'
 import useConnect from '../hooks/useConnect'
 
@@ -18,7 +18,6 @@ function Authentification({ handleLog }) {
     handleChangeStay,
     clearLocalStorage,
     checkID,
-    dispatch,
   } = useConnect()
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

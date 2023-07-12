@@ -3,7 +3,7 @@ import useSearch from '../../hooks/useSearch'
 import { TextField } from '@mui/material'
 
 function SearchBar() {
-  const [search, setSearch] = useSearch()
+  const { search, setSearch } = useSearch()
   const inputRef = useRef(null)
   const handleChange = (e) => {
     setSearch(e.target.value)

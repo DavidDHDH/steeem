@@ -20,7 +20,7 @@ const reducer = (state, action) => {
 }
 
 function AddGame({ isHidden, setIsHidden }) {
-  const [, setSearch] = useSearch()
+  const { setSearch } = useSearch()
   const titleInput = useRef()
   const { gamesData, setGamesData } = useGames()
 

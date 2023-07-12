@@ -7,7 +7,7 @@ import useSearch from '../hooks/useSearch'
 export const GamesContext = createContext()
 
 function GamesProvider(props) {
-  const [search] = useSearch()
+  const { search } = useSearch()
   const [filteredCatBy, setFilteredCatBy] = useState('')
   const [filteredPlatBy, setFilteredPlatBy] = useState('')
 
@@ -22,10 +22,6 @@ function GamesProvider(props) {
   })
 
   const [gamesData, setGamesData] = useState(originalGames)
-
-  useEffect(() => {
-    setGamesData(filteredGames)
-  }, [search, filteredCatBy, filteredPlatBy, originalGames])
 
   const gamesCategories = originalGames
     ? [...new Set(originalGames.map((game) => game.genre))]
@@ -43,6 +39,10 @@ function GamesProvider(props) {
         )
       })
     : []
+
+  useEffect(() => {
+    setGamesData(filteredGames)
+  }, [search, filteredCatBy, filteredPlatBy, originalGames])
 
   if (error) {
     return <ErrorDisplay error={error} />
