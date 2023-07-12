@@ -25,6 +25,7 @@ function Authentification({ handleLog }) {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
+      <h1 className="text-2xl my-5">Se connecter</h1>
       <form className="flex flex-col w-96 space-y-3">
         <TextField
           id="username"
@@ -48,7 +49,6 @@ function Authentification({ handleLog }) {
           helperText="1234"
           required
         />
-
         <button
           onClick={checkID}
           className="border border-green-600 text-white bg-green-600 p-2 rounded-md hover:bg-transparent hover:text-green-600 transition"
