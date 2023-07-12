@@ -23,6 +23,11 @@ function GamesProvider(props) {
 
   const [gamesData, setGamesData] = useState(originalGames)
 
+  // la logique de filtrage des jeux est a revoir car elle est trop lourde
+  // utiliser justement useQuery doit permettre d'eliminer cette logique
+  // et de laisser la librairie faire le travail je sais ta penséé mais essaie de reflechir à une meilleure solution
+  // de plus li y a pas d'utilite un context pour un useQuery car la logique doit etre dans le composant visuel
+
   const gamesCategories = originalGames
     ? [...new Set(originalGames.map((game) => game.genre))]
     : []

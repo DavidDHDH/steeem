@@ -7,6 +7,7 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+// revenir la methode for utilisation à changer pour la methode map peut-etre
 const addValuesToJson = (games) => {
   for (let game of games) {
     game.price = getRandomNumber(1, 69)
@@ -15,6 +16,7 @@ const addValuesToJson = (games) => {
   }
 }
 
+// attention, il faut mettre votre clé dans un fichier env
 export const options = {
   method: 'GET',
   url: 'https://free-to-play-games-database.p.rapidapi.com/api/games',
@@ -23,6 +25,12 @@ export const options = {
     'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
   },
 }
+
+// axios renvoie une erreur si la requête n'aboutit pas
+// quel l'utilite du try catch ? avec axios
+// addValuesToJson(response.data)
+//    return response.data
+// tu gere le retour du recupere la data pour l'envoyer dans une fonction et ensuite renvoyer la data ? logique a revoir
 
 export const fetchGames = async () => {
   try {
@@ -35,6 +43,8 @@ export const fetchGames = async () => {
 }
 
 // FAKE API RETOUR TRAVAIL HORS CONNEXION
+
+// fichier a exporter
 
 export const fakeGames = [
   {
