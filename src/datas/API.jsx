@@ -6,6 +6,7 @@ function getRandomNumber(min, max) {
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
+
 const addValuesToJson = (games) => {
   for (let game of games) {
     game.price = getRandomNumber(1, 69)
@@ -24,12 +25,16 @@ export const options = {
 }
 
 export const fetchGames = async () => {
-  const response = await axios.request(options)
-  addValuesToJson(response.data)
-  return response.data
+  try {
+    const response = await axios.request(options)
+    addValuesToJson(response.data)
+    return response.data
+  } catch (error) {
+    return error
+  }
 }
 
-// FAKE API RETOUR
+// FAKE API RETOUR TRAVAIL HORS CONNEXION
 
 export const fakeGames = [
   {

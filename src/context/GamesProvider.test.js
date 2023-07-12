@@ -1,6 +1,6 @@
-import { addValuesToJson } from './GamesProvider.js'
+import { addValuesToJson } from '../datas/API'
 
-test('addValuesToJson ajout les valeurs aux objets', () => {
+test('addValuesToJson ajout les valeurs aux objets et renvoi le bon tableau', () => {
   const games = [
     { id: 1, name: 'Game 1' },
     { id: 2, name: 'Game 2' },
@@ -8,6 +8,7 @@ test('addValuesToJson ajout les valeurs aux objets', () => {
   ]
 
   addValuesToJson(games)
+
   games.forEach((game) => {
     expect(game).toHaveProperty('price')
     expect(game).toHaveProperty('gotIt')

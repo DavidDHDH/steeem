@@ -3,6 +3,10 @@ Projet d'entrainement de la formation React Mastery (Mike Codeur) : catalogue de
 ### Structure de base de l'application v1
 
 ![Alt text](src/assets/images/Desktop.png)
+v3 à venir :
+
+- errorBoundaries
+- réécriture des tests
 
 v2 final :
 
@@ -10,6 +14,7 @@ v2 final :
 - possibilité d'ajout un jeu vidéo manuellement à la liste (automatiquement en ma possession)
 - nouvelle présentation des filtres sous formes de selects.
 - utilisation de React Query pour les requetes HTTP.
+- test non opérationnel
 
 v1 final :
 

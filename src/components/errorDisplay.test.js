@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import ErrorDisplay from './errorDisplay'
 import '@testing-library/jest-dom/extend-expect'
 
-const error = { status: 404 }
+const error = { status: 404, message: 'il y a un probleme' }
 
 test('Affichage du pop up erreur', () => {
   render(<ErrorDisplay error={error} />)
@@ -12,5 +12,5 @@ test('Affichage du pop up erreur', () => {
 
 test('Affichage du bon code erreur', () => {
   render(<ErrorDisplay error={error} />)
-  expect(screen.getByText(/Détails :/i)).toHaveTextContent(error.status)
+  expect(screen.getByText(/Détails :/i)).toHaveTextContent(error.message)
 })
